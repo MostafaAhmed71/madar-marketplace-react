@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-orbit-purple: #505086;
+  --color-orbit-purple-dark: #3d3d66;
+  --color-solar-gold: #ffba00;
+  --color-nebula-laven: #6b6ba8;
+  --color-stellar-gray: #fafafa;
+  --color-space-black: #18181b;
+  --color-growth-green: #16a34a;
+  --font-sans: 'Tajawal', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #fafafa;
+  color: #18181b;
+  min-height: 100vh;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out backwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out backwards;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #fafafa 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* بطاقات المنتجات — ظل خفيف مثل Shopify */
+.product-card {
+  background: #fff;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.product-card:hover {
+  border-color: #d4d4d8;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* حقل إدخال موحّد */
+.input-field {
+  height: 44px;
+  width: 100%;
+  padding: 0 14px;
+  font-size: 0.875rem;
+  background: #fff;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-orbit-purple);
+  box-shadow: 0 0 0 3px rgba(80, 80, 134, 0.12);
+}
+
+.input-field::placeholder {
+  color: #a1a1aa;
+}
+
+textarea.input-field {
+  height: auto;
+  min-height: 88px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  resize: vertical;
+}
+
+select.input-field {
+  cursor: pointer;
+}

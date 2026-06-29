@@ -1,0 +1,6 @@
+<?php
+// منع الوصول المباشر للملفات المحمية
+// صور المعاينة (previews) يمكن جعلها عامة عبر .htaccess منفصل
+
+header('HTTP/1.0 403 Forbidden');
+exit('Access denied');
