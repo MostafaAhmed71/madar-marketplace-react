@@ -1,117 +1,371 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-orbit-purple: #505086;
-  --color-orbit-purple-dark: #3d3d66;
-  --color-solar-gold: #ffba00;
-  --color-nebula-laven: #6b6ba8;
-  --color-stellar-gray: #fafafa;
-  --color-space-black: #18181b;
-  --color-growth-green: #16a34a;
-  --font-sans: 'Tajawal', system-ui, sans-serif;
+  /* === Stitch Design System — Celestial Academic Marketplace === */
+
+  /* Primary — Orbit Purple */
+  --color-primary:            #39396d;
+  --color-on-primary:         #ffffff;
+  --color-primary-container:  #505086;
+  --color-on-primary-container: #c7c5ff;
+  --color-primary-fixed:      #e2dfff;
+  --color-primary-fixed-dim:  #c2c1ff;
+  --color-inverse-primary:    #c2c1ff;
+
+  /* Secondary — Solar Gold */
+  --color-secondary:          #7b5800;
+  --color-on-secondary:       #ffffff;
+  --color-secondary-container: #f9b500;
+  --color-on-secondary-container: #684a00;
+  --color-secondary-fixed:    #ffdea6;
+  --color-secondary-fixed-dim: #ffbb0c;
+  --color-on-secondary-fixed: #271900;
+  --color-on-secondary-fixed-variant: #5d4200;
+
+  /* Tertiary — Nebula */
+  --color-tertiary:           #383871;
+  --color-on-tertiary:        #ffffff;
+  --color-tertiary-container: #4f4f8a;
+  --color-on-tertiary-container: #c6c5ff;
+  --color-tertiary-fixed:     #e2dfff;
+  --color-tertiary-fixed-dim: #c2c1ff;
+  --color-on-tertiary-fixed:  #14124d;
+  --color-on-tertiary-fixed-variant: #40407a;
+
+  /* Surface / Background */
+  --color-background:         #f8f9fb;
+  --color-on-background:      #191c1e;
+  --color-surface:            #f8f9fb;
+  --color-surface-dim:        #d9dadc;
+  --color-surface-bright:     #f8f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low:    #f3f4f6;
+  --color-surface-container:        #edeef0;
+  --color-surface-container-high:   #e7e8ea;
+  --color-surface-container-highest: #e1e2e4;
+  --color-surface-variant:    #e1e2e4;
+  --color-surface-tint:       #595990;
+  --color-on-surface:         #191c1e;
+  --color-on-surface-variant: #47464f;
+  --color-inverse-surface:    #2e3132;
+  --color-inverse-on-surface: #f0f1f3;
+
+  /* Outline */
+  --color-outline:            #777680;
+  --color-outline-variant:    #c8c5d0;
+
+  /* Semantic */
+  --color-error:              #ba1a1a;
+  --color-on-error:           #ffffff;
+  --color-error-container:    #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-growth-green:       #22C55E;
+  --color-warning-amber:      #F59E0B;
+  --color-danger-red:         #EF4444;
+  --color-nebula-lavender:    #6B6BA8;
+  --color-space-black:        #1F2937;
+
+  /* Legacy compat */
+  --color-brand:              #39396d;
+  --color-brand-dark:         #505086;
+  --color-brand-light:        #e2dfff;
+
+  --font-sans: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   direction: rtl;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background-color: #fafafa;
-  color: #18181b;
   min-height: 100vh;
+  background-color: #f8f9fb;
+  color: #191c1e;
 }
 
+/* ============================
+   GLASS (للـ modals فقط)
+   ============================ */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.glass-md  { background: rgba(255,255,255,0.80); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.4); }
+.glass-heavy { background: rgba(255,255,255,0.90); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.5); }
+.glass-blue { background: rgba(57,57,109,0.08); border: 1px solid rgba(57,57,109,0.16); }
+.glass-dark { background: rgba(31,41,55,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+/* ============================
+   ANIMATIONS
+   ============================ */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
-
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50%       { transform: translateY(-8px) rotate(0deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 16px rgba(57,57,109,0.20); }
+  50%       { box-shadow: 0 0 32px rgba(57,57,109,0.40); }
+}
+@keyframes shine {
+  from { left: -100%; }
+  to   { left: 200%; }
+}
+@keyframes orbit-pulse {
+  0%, 100% { opacity: 0.05; }
+  50%       { opacity: 0.12; }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-}
+.animate-fade-in-up  { animation: fadeInUp  0.55s cubic-bezier(0.16,1,0.3,1) backwards; }
+.animate-fade-in     { animation: fadeIn    0.40s cubic-bezier(0.16,1,0.3,1) backwards; }
+.animate-slide-down  { animation: slideDown 0.30s cubic-bezier(0.16,1,0.3,1) backwards; }
+.animate-float       { animation: float 4s ease-in-out infinite; }
+.animate-glow        { animation: glow-pulse 2.5s ease-in-out infinite; }
+.animate-gold-pulse  { animation: glow-pulse 2s ease-in-out infinite; }
+.animate-badge       { animation: glow-pulse 2s ease-in-out infinite; }
 
-.animate-fade-in {
-  animation: fadeIn 0.35s ease-out backwards;
-}
-
-.animate-slide-down {
-  animation: slideDown 0.3s ease-out backwards;
-}
-
+/* ============================
+   SKELETON
+   ============================ */
 .skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #fafafa 50%, #f0f0f0 75%);
+  background: linear-gradient(90deg, #edeef0 25%, #e7e8ea 50%, #edeef0 75%);
   background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
+  animation: shimmer 1.8s infinite;
+  border-radius: 8px;
 }
 
-/* بطاقات المنتجات — ظل خفيف مثل Shopify */
+/* ============================
+   PRODUCT CARD
+   ============================ */
 .product-card {
-  background: #fff;
-  border: 1px solid #e4e4e7;
-  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(200,197,208,0.40);
+  border-radius: 16px;
   overflow: hidden;
-  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  transition: all 0.30s cubic-bezier(0.16,1,0.3,1);
+  box-shadow: 0 1px 4px rgba(57,57,109,0.06);
+  position: relative;
 }
 
 .product-card:hover {
-  border-color: #d4d4d8;
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(57,57,109,0.14), 0 4px 12px rgba(0,0,0,0.06);
+  border-color: rgba(57,57,109,0.20);
 }
 
-/* حقل إدخال موحّد */
+/* ============================
+   INPUT FIELD
+   ============================ */
 .input-field {
-  height: 44px;
+  height: 48px;
   width: 100%;
-  padding: 0 14px;
-  font-size: 0.875rem;
-  background: #fff;
-  border: 1px solid #e4e4e7;
-  border-radius: 8px;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  padding: 0 16px;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  background: #ffffff;
+  border: 1.5px solid #c8c5d0;
+  color: #191c1e;
+  border-radius: 10px;
+  transition: all 0.22s ease;
 }
-
 .input-field:focus {
   outline: none;
-  border-color: var(--color-orbit-purple);
-  box-shadow: 0 0 0 3px rgba(80, 80, 134, 0.12);
+  border-color: #39396d;
+  box-shadow: 0 0 0 3px rgba(57,57,109,0.10);
 }
+.input-field::placeholder { color: #777680; }
+textarea.input-field { height: auto; min-height: 96px; padding-top: 12px; padding-bottom: 12px; resize: vertical; }
+select.input-field { cursor: pointer; }
 
-.input-field::placeholder {
-  color: #a1a1aa;
-}
+/* ============================
+   SCROLLBAR HIDE
+   ============================ */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
-textarea.input-field {
-  height: auto;
-  min-height: 88px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  resize: vertical;
-}
-
-select.input-field {
+/* ============================
+   CATEGORY PILLS
+   ============================ */
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1.5px solid #c8c5d0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #47464f;
   cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.category-pill:hover {
+  border-color: #39396d;
+  color: #39396d;
+  background: #e2dfff;
+}
+.category-pill.active {
+  background: #39396d;
+  border-color: #39396d;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(57,57,109,0.22);
+}
+
+/* ============================
+   BUTTON SHINE
+   ============================ */
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+}
+.btn-shine:hover::after { animation: shine 0.6s ease forwards; }
+
+/* ============================
+   BADGES
+   ============================ */
+.badge-discount {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 800;
+  background: #EF4444;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(239,68,68,0.28);
+  letter-spacing: 0.02em;
+}
+
+.badge-hot {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  background: #f9b500;
+  color: #684a00;
+}
+
+.badge-new {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  background: #39396d;
+  color: #ffffff;
+}
+
+.instant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  background: #e2dfff;
+  color: #39396d;
+  border: 1px solid rgba(57,57,109,0.18);
+}
+
+/* ============================
+   SECTION TITLE
+   ============================ */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #39396d;
+}
+
+/* ============================
+   PRICE
+   ============================ */
+.price-main {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #39396d;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.price-currency {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #777680;
+}
+.price-old {
+  font-size: 0.75rem;
+  text-decoration: line-through;
+  color: #777680;
+}
+
+/* ============================
+   FOOTER LINKS
+   ============================ */
+.footer-link {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  text-decoration: none;
+  display: block;
+  padding: 3px 0;
+}
+.footer-link:hover { color: #ffffff; }
+
+/* ============================
+   H-SCROLL
+   ============================ */
+.h-scroll { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; -ms-overflow-style: none; }
+.h-scroll::-webkit-scrollbar { display: none; }
+
+/* ============================
+   STARS
+   ============================ */
+.star-fill  { color: #F59E0B; fill: #F59E0B; }
+.star-empty { color: #c8c5d0; }
+
+/* ============================
+   ANNOUNCEMENT BAR
+   ============================ */
+.announcement-bar {
+  background: linear-gradient(90deg, #39396d 0%, #505086 50%, #39396d 100%);
 }

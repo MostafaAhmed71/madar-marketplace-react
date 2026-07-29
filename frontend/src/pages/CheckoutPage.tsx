@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ArrowRight, Tag } from 'lucide-react'
+import { ArrowRight, Tag, ShieldCheck, Info } from 'lucide-react'
 import { BankDetailsCard } from '../components/BankDetailsCard'
 import { LoadingSpinner } from '../components/LoadingSpinner'
 import { Button } from '../components/ui/Button'
@@ -71,41 +71,69 @@ export function CheckoutPage() {
   if (loading) return <LoadingSpinner />
 
   return (
-    <div className="animate-fade-in-up">
-      <h1 className="text-2xl sm:text-3xl font-bold text-zinc-900 mb-8">إتمام الشراء</h1>
+    <div className="animate-fade-in-up space-y-6">
+      {/* ======= شريط الخطوات ======= */}
+      <div className="max-w-2xl mx-auto flex items-center justify-between px-4 pb-4">
+        <div className="flex flex-col items-center gap-1.5">
+          <div className="w-8 h-8 rounded-full bg-[#39396d] text-white flex items-center justify-center font-bold text-sm">1</div>
+          <span className="text-xs font-semibold text-[#39396d]">ملخص الطلب</span>
+        </div>
+        <div className="flex-1 h-0.5 bg-[#39396d] mx-4" />
+        <div className="flex flex-col items-center gap-1.5">
+          <div className="w-8 h-8 rounded-full bg-[#39396d] text-white flex items-center justify-center font-bold text-sm ring-4 ring-[#39396d]/10">2</div>
+          <span className="text-xs font-bold text-[#39396d]">الدفع والتحويل</span>
+        </div>
+        <div className="flex-1 h-0.5 bg-[#edeef0] mx-4" />
+        <div className="flex flex-col items-center gap-1.5">
+          <div className="w-8 h-8 rounded-full bg-[#edeef0] text-[#777680] flex items-center justify-center font-bold text-sm">3</div>
+          <span className="text-xs font-semibold text-[#777680]">تأكيد الطلب</span>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <div className="bg-white rounded-2xl border border-zinc-200 p-6">
-            <h2 className="font-bold text-lg text-zinc-900 mb-4">ملخص الطلب</h2>
-            {items.map((item) => (
-              <div key={cartItemKey(item)} className="flex justify-between py-3 border-b border-zinc-100 last:border-0">
-                <span className="text-sm text-zinc-700 line-clamp-1 flex-1 ml-4">{item.titleAr}</span>
-                <span className="text-sm font-semibold text-zinc-900 shrink-0">{item.price} ر.س</span>
-              </div>
-            ))}
-            <div className="mt-4 space-y-2 text-sm">
-              <div className="flex justify-between text-zinc-600">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* تفاصيل الطلب */}
+        <div className="lg:col-span-5 order-2 lg:order-1 space-y-4">
+          <div className="bg-white rounded-3xl border border-[#c8c5d0]/30 p-6 shadow-sm">
+            <h2 className="font-bold text-base text-[#39396d] mb-4 pb-3 border-b border-[#edeef0]" style={{ fontFamily: 'IBM Plex Sans Arabic' }}>ملخص الطلب</h2>
+            <div className="divide-y divide-[#edeef0] max-h-60 overflow-y-auto pr-1">
+              {items.map((item) => (
+                <div key={cartItemKey(item)} className="flex justify-between py-3">
+                  <span className="text-xs text-[#47464f] line-clamp-1 flex-1 ml-4">{item.titleAr}</span>
+                  <span className="text-xs font-bold text-[#191c1e] shrink-0">{item.price} ر.س</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 pt-4 border-t border-[#edeef0] space-y-2 text-xs">
+              <div className="flex justify-between text-[#777680]">
                 <span>المجموع الفرعي</span>
                 <span>{total.toFixed(2)} ر.س</span>
               </div>
               {discount > 0 && (
-                <div className="flex justify-between text-emerald-600">
+                <div className="flex justify-between text-[#22C55E] font-semibold">
                   <span>الخصم</span>
                   <span>- {discount.toFixed(2)} ر.س</span>
                 </div>
               )}
-              <div className="flex justify-between font-bold text-lg pt-3 border-t border-zinc-200 text-zinc-900">
+              <div className="flex justify-between font-bold text-sm pt-3 border-t border-[#edeef0] text-[#39396d]">
                 <span>الإجمالي</span>
                 <span>{finalTotal.toFixed(2)} ر.س</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-zinc-200 p-6">
-            <h2 className="font-bold text-zinc-900 mb-3 flex items-center gap-2">
-              <Tag className="w-4 h-4 text-zinc-500" />
-              كود خصم
+          {/* تنبيه ملاحظة الطلب */}
+          <div className="bg-[#ffdea6]/20 border border-[#f9b500]/10 rounded-2xl p-4 flex items-start gap-2.5">
+            <Info className="w-5 h-5 text-[#7b5800] shrink-0 mt-0.5" />
+            <p className="text-[11px] text-[#684a00] leading-relaxed">
+              يرجى التأكد من كتابة <strong>رقم الطلب</strong> في ملاحظات التحويل البنكي لسرعة التأكيد وتفادي التأخير.
+            </p>
+          </div>
+
+          {/* كود الخصم */}
+          <div className="bg-white rounded-3xl border border-[#c8c5d0]/30 p-6 shadow-sm">
+            <h2 className="font-bold text-sm text-[#39396d] mb-3 flex items-center gap-2" style={{ fontFamily: 'IBM Plex Sans Arabic' }}>
+              <Tag className="w-4 h-4 text-[#777680]" />
+              كود خصم إضافي
             </h2>
             <div className="flex gap-2">
               <input
@@ -113,49 +141,64 @@ export function CheckoutPage() {
                 placeholder="أدخل الكود"
                 value={couponCode}
                 onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
-                className="input-field flex-1"
+                className="input-field flex-1 h-10 text-xs rounded-xl"
                 dir="ltr"
               />
-              <Button variant="secondary" onClick={handleApplyCoupon}>
+              <button
+                onClick={handleApplyCoupon}
+                className="bg-[#e2dfff] text-[#39396d] border border-[#39396d]/10 px-4 rounded-xl text-xs font-bold hover:bg-[#39396d] hover:text-white transition-all"
+              >
                 تطبيق
-              </Button>
+              </button>
             </div>
             {couponMsg && (
-              <p className={`text-sm mt-2 ${couponValid ? 'text-emerald-600' : 'text-red-500'}`}>
+              <p className={`text-xs mt-2 font-bold ${couponValid ? 'text-[#22C55E]' : 'text-red-500'}`}>
                 {couponMsg}
               </p>
             )}
           </div>
         </div>
 
-        <div>
+        {/* بيانات الحساب البنكي وزر التحويل */}
+        <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
           {bank ? (
             <BankDetailsCard bank={bank} amount={finalTotal} />
           ) : (
-            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 text-amber-900">
-              <p className="font-semibold">بيانات الحساب البنكي غير متوفرة</p>
-              <p className="text-sm mt-1 text-amber-800">تواصل مع الإدارة لإتمام الدفع</p>
+            <div className="bg-red-50 border border-red-200 rounded-3xl p-6 text-red-900">
+              <p className="font-bold">بيانات الحساب البنكي غير متوفرة حالياً</p>
+              <p className="text-xs mt-1 text-red-800">يرجى الاتصال بالدعم الفني لإتمام الدفع</p>
             </div>
           )}
 
-          {error && <p className="text-red-600 text-sm mt-4 bg-red-50 px-3 py-2 rounded-lg">{error}</p>}
+          <div className="space-y-4">
+            {error && (
+              <p className="text-red-600 text-xs bg-red-50 border border-red-100 px-3 py-2 rounded-xl">
+                {error}
+              </p>
+            )}
+            <Button
+              variant="accent"
+              size="lg"
+              fullWidth
+              className="bg-[#f9b500] text-[#684a00] hover:bg-[#f9b500]/90 rounded-2xl font-bold h-14 shadow-lg shadow-[#f9b500]/10 flex items-center justify-center gap-2"
+              onClick={handleCreateOrder}
+              disabled={!bank}
+              loading={submitting}
+              icon={<ArrowRight className="w-5 h-5 rotate-180" />}
+            >
+              تم التحويل، رفع الإيصال
+            </Button>
 
-          <Button
-            variant="accent"
-            size="lg"
-            fullWidth
-            className="mt-6"
-            onClick={handleCreateOrder}
-            disabled={!bank}
-            loading={submitting}
-            icon={<ArrowRight className="w-5 h-5 rotate-180" />}
-          >
-            حوّلت المبلغ — رفع الإيصال
-          </Button>
-
-          <Link to="/cart" className="block text-center text-sm text-zinc-500 mt-4 hover:text-orbit-purple transition-colors">
-            العودة للسلة
-          </Link>
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-1.5 text-xs text-[#777680]">
+                <ShieldCheck className="w-4 h-4 text-[#22C55E]" />
+                <span>دفع آمن ومشفّر 100%</span>
+              </div>
+              <Link to="/cart" className="text-xs font-bold text-[#777680] hover:text-[#39396d] transition-colors underline">
+                العودة لتعديل السلة
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

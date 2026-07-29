@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #f8f9fb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(225, 226, 228, 0.5);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d9dadc;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .side-nav-responsive {
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .side-nav-responsive.active {
+                transform: translateX(0);
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9fb",
+                        "surface-container": "#edeef0",
+                        "surface-dim": "#d9dadc",
+                        "on-primary-fixed-variant": "#414176",
+                        "on-tertiary-fixed": "#14124d",
+                        "surface-tint": "#595990",
+                        "tertiary": "#383871",
+                        "surface-container-high": "#e7e8ea",
+                        "secondary-fixed-dim": "#ffbb0c",
+                        "on-surface": "#191c1e",
+                        "nebula-lavender": "#6B6BA8",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#f9b500",
+                        "on-primary-container": "#c7c5ff",
+                        "surface-container-low": "#f3f4f6",
+                        "warning-amber": "#F59E0B",
+                        "danger-red": "#EF4444",
+                        "primary-fixed": "#e2dfff",
+                        "growth-green": "#22C55E",
+                        "primary": "#39396d",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e1e2e4",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-primary-fixed": "#151448",
+                        "primary-container": "#505086",
+                        "tertiary-container": "#4f4f8a",
+                        "on-surface-variant": "#47464f",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed-dim": "#c2c1ff",
+                        "secondary": "#7b5800",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f3",
+                        "outline-variant": "#c8c5d0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#777680",
+                        "primary-fixed-dim": "#c2c1ff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f8f9fb",
+                        "on-secondary-fixed": "#271900",
+                        "on-tertiary-fixed-variant": "#40407a",
+                        "inverse-primary": "#c2c1ff",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#ffdea6",
+                        "on-tertiary-container": "#c6c5ff",
+                        "space-black": "#1F2937",
+                        "surface": "#f8f9fb",
+                        "on-secondary-container": "#684a00",
+                        "tertiary-fixed": "#e2dfff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "container-max": "1280px",
+                        "gutter": "20px",
+                        "md": "16px",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface overflow-x-hidden">
+<!-- Mobile Menu Toggle -->
+<div class="md:hidden fixed top-4 right-4 z-[60]">
+<button class="p-sm bg-primary text-on-primary rounded-lg shadow-lg" onclick="toggleSideNav()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="flex min-h-screen">
+<!-- SideNavBar (Predicted Component JSON implementation) -->
+<aside class="fixed inset-y-0 right-0 z-50 flex flex-col p-md bg-surface-container-lowest dark:bg-inverse-surface shadow-xl docked right-0 h-full w-80 translate-x-0 transition-transform duration-300 side-nav-responsive" id="sideNav">
+<div class="flex items-center gap-md mb-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a corporate manager in a high-tech office setting. The lighting is soft and natural, with a focus on clean, modern business aesthetics. The color palette features cool blues and warm skin tones, reflecting a professional and visionary personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojjDejAS06hULrwDRSnWOatTTuHbICTgErnZohOnMIMixO3X1A10qGZkcLlTK8Gf5btEKM0a5Kd94QMBikIMHLwcNP6z_TLvOLI5KMtRf49pdGrD9hMH98MSbBDXfPoBNrsddlIgkGibpWNdN6GNaVH9UWnjsxIJJW5joj-RKv5T_8_PY1CIFbisHyrQHO3o7DU2FbQFTztdBxkhkUS1P9mSUTUs3tqxTQDUz-m8N06aXlnwNcXwR0DWdOyURVDXr3Tqz8Da9cxs"/>
+</div>
+<div>
+<h2 class="font-title-lg text-title-lg text-primary">إدارة المتجر</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">مرحباً، المشرف</p>
+</div>
+</div>
+<nav class="flex-1 space-y-sm overflow-y-auto custom-scrollbar">
+<!-- Navigation Items -->
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard</span>
+<span class="font-label-md text-label-md">لوحة التحكم</span>
+</a>
+<a class="flex items-center gap-md p-md bg-primary-container text-on-primary-container rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md">إدارة التقييمات</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_basket</span>
+<span class="font-label-md text-label-md">المنتجات</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">الطلبات</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">العملاء</span>
+</a>
+<div class="pt-xl mt-xl border-t border-surface-variant">
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">الإعدادات</span>
+</a>
+<a class="flex items-center gap-md p-md text-error hover:bg-error-container/20 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<div class="mt-xl p-md bg-primary/5 rounded-xl border border-primary/10">
+<p class="font-label-md text-label-md text-primary mb-sm">تحتاج مساعدة؟</p>
+<button class="w-full py-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md">تواصل مع الدعم</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 mr-0 md:mr-80 p-gutter lg:p-xl min-w-0">
+<!-- Header Section -->
+<header class="mb-xl flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-xs">إدارة التقييمات</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">مراجعة وتحليل ملاحظات العملاء حول المنتجات</p>
+</div>
+<div class="flex items-center gap-sm">
+<button class="px-md py-sm bg-white border border-outline-variant text-on-surface-variant rounded-lg flex items-center gap-xs hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">filter_list</span>
+<span class="font-label-md text-label-md">تصفية</span>
+</button>
+<button class="px-md py-sm bg-primary text-on-primary rounded-lg flex items-center gap-xs hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined">download</span>
+<span class="font-label-md text-label-md">تصدير التقرير</span>
+</button>
+</div>
+</header>
+<!-- Summary Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
+<div class="glass-card p-xl rounded-2xl flex items-center gap-lg">
+<div class="w-14 h-14 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined !text-3xl">reviews</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">إجمالي التقييمات</p>
+<h3 class="font-headline-md text-headline-md text-primary">1,248</h3>
+</div>
+</div>
+<div class="glass-card p-xl rounded-2xl flex items-center gap-lg border-b-4 border-b-secondary-container">
+<div class="w-14 h-14 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined !text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">متوسط التقييم</p>
+<h3 class="font-headline-md text-headline-md text-primary">4.8 / 5.0</h3>
+</div>
+</div>
+<div class="glass-card p-xl rounded-2xl flex items-center gap-lg border-b-4 border-b-warning-amber">
+<div class="w-14 h-14 rounded-xl bg-warning-amber/10 flex items-center justify-center text-warning-amber">
+<span class="material-symbols-outlined !text-3xl">pending_actions</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">في انتظار المراجعة</p>
+<h3 class="font-headline-md text-headline-md text-primary">24</h3>
+</div>
+</div>
+</div>
+<!-- Reviews Table Area -->
+<section class="glass-card rounded-2xl overflow-hidden shadow-sm">
+<div class="p-md border-b border-surface-variant bg-surface-container-low flex justify-between items-center">
+<h4 class="font-title-lg text-title-lg text-primary">آخر التقييمات الواردة</h4>
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pr-10 pl-4 py-2 bg-white border border-outline-variant rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-body-md text-body-md" placeholder="بحث في التقييمات..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-high/30">
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant">المنتج</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant">العميل</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant">التقييم</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant">نص المراجعة</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant">الحالة</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant">الإجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-md bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A premium educational digital product cover for a high-end online course. The design is sleek, featuring geometric nebula-like patterns in Orbit Purple and Solar Gold. It looks professional, trusted, and visionary, perfectly aligning with a celestial discovery brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCszFn7-wN9VjZDpo0-QegQkYh7X-MRhBafKC03PJKknt-_G3jSVugkDeD1fgYG2mR_YyaGBzI0_ytjpYURqt--9MkFhOilpSU5CKVcmMzVLyvMZWop4TcIevurFy3SfDUitZ7v-rtKVeai38i254_iItPQXnmMTdUoRw6rgqay9Aqz-mTNoY_9ne8BgFmuOLGitGj2b_SdDtFecxqfi4rHaEDxGZTKHbA6qZeXGEw_siEDUvZshBs78vO46ve5An1FLqHFQnnOqts"/>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">دليل مدار للفيزياء</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md">أحمد بن محمد</td>
+<td class="px-lg py-lg">
+<div class="flex text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</td>
+<td class="px-lg py-lg max-w-xs truncate font-body-md text-body-md" title="محتوى رائع ومنظم جداً، ساعدني في فهم المفاهيم المعقدة بسهولة.">محتوى رائع ومنظم جداً، ساعدني في فهم المفاهيم...</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-xs bg-warning-amber/10 text-warning-amber rounded-full text-xs font-bold border border-warning-amber/20">قيد المراجعة</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex gap-sm">
+<button class="p-xs text-growth-green hover:bg-growth-green/10 rounded transition-colors" title="نشر">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-xs text-danger-red hover:bg-danger-red/10 rounded transition-colors" title="إخفاء">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+<button class="p-xs text-primary hover:bg-primary/10 rounded transition-colors" title="رد">
+<span class="material-symbols-outlined">reply</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-md bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional marketing toolkit thumbnail for educators, featuring clean typography and structured data visualizations. The aesthetic is corporate and modern, using deep space black and nebula lavender accents. High-quality visuals emphasize precision and clarity for marketplace users." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8jAHwFu35NXvHPqK4weqAEjKgNY04ZFaQxn1MXMC9UyDvFADsSRfNp4pOK7TiV8bS7ggAGyq-LAaoA8FZYGw5DQsGvl5xGm8x0oFiEZ_K6LYG1Zt8LSS8w6gmPExsEMtt2XB3D7nDt9A1QRJEJi6-Z2aJicMgWrze0x7SRkQx6rq3vLx4HagthnQXW9OHMIsi2pJZcz9IRpCkuHp86NX7DSoie9sOtqT9eSbz_gvO5triHnvq2JnwhPEvZBq9_5BooC5LvlxvE54"/>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">حزمة أدوات المعلم</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md">سارة العتيبي</td>
+<td class="px-lg py-lg">
+<div class="flex text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+</td>
+<td class="px-lg py-lg max-w-xs truncate font-body-md text-body-md">جودة عالية جداً وتصميم احترافي. شكراً لكم.</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-xs bg-growth-green/10 text-growth-green rounded-full text-xs font-bold border border-growth-green/20">تم النشر</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex gap-sm">
+<button class="p-xs text-on-surface-variant hover:bg-surface-variant rounded transition-colors" disabled="" title="منشور بالفعل">
+<span class="material-symbols-outlined opacity-50">task_alt</span>
+</button>
+<button class="p-xs text-danger-red hover:bg-danger-red/10 rounded transition-colors" title="إخفاء">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+<button class="p-xs text-primary hover:bg-primary/10 rounded transition-colors" title="رد">
+<span class="material-symbols-outlined">reply</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-md bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A collection of educational flashcards displayed in a creative, asymmetric bento grid layout. The visual style is refined and modern, featuring vibrant gradients and subtle light-play. The setting is a clean digital workspace that feels secure and premium for educational resources." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChZXbbLeXRuqSLEBPXF0_HHfk46Q4tCfpCd4xel3HsxGYMdXeT3gXM1vZodQ-j3VdBg1K0OPgAH6vFr-fl-uQqShyULhiu9GRnPl35Lc7s5zfVhADqgH0C8XmfxGkZ8CxtpzjOA11QqFDjsJbxhLD_F3zlZdxiX2iTzuwhUmgCQo1tA5ocd6wOqN-xjlCi2LpoX2-4VTtNFxNH3rK7fA8KRFByyeAsT_GucBP1Gj6MFao_JmicjEc3hbHto4gHcJNRz73JX9mLquY"/>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">بطاقات التعلم النشط</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md">خالد الشمري</td>
+<td class="px-lg py-lg">
+<div class="flex text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+</td>
+<td class="px-lg py-lg max-w-xs truncate font-body-md text-body-md">المنتج لم يكن كما توقعت تماماً، هناك بعض الأخطاء.</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-xs bg-surface-dim text-on-surface-variant rounded-full text-xs font-bold border border-outline-variant">مخفي</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex gap-sm">
+<button class="p-xs text-growth-green hover:bg-growth-green/10 rounded transition-colors" title="نشر">
+<span class="material-symbols-outlined">publish</span>
+</button>
+<button class="p-xs text-primary hover:bg-primary/10 rounded transition-colors" title="تعديل">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-xs text-primary hover:bg-primary/10 rounded transition-colors" title="رد">
+<span class="material-symbols-outlined">reply</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-md bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An advanced analytical dashboard interface showing educational metrics. The UI features glassmorphism cards and a sophisticated color scheme of Orbit Purple, Solar Gold, and Stellar Gray. The lighting is focused and professional, suggesting a secure environment for manual data verification." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB93Zho8eTAyui8Lk_T_ArSTGL9_It5y__StpM9Az4OQ1twPXjYJT8OWOvt85HUG5KE5zCI0YiBZaib9fO09E79jd-GLGoijJvvFwXl9KPMmHPtjNFjuh03_DuYAC8mW0rU1LewsObCDJNZ_qKzp42Qjk4viLfFZRPP3qVa1hTcCPH9FMXUHjExn-fEmlylVYWDuAcxI-RSK-YygmIk0HosmlZujFIoLivy5a3u2wtI3W6-JzUXu5kAnh7YJkwSf0XxaFhZgxeb7kk"/>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">برنامج إدارة الحصص</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md">نورة القحطاني</td>
+<td class="px-lg py-lg">
+<div class="flex text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</td>
+<td class="px-lg py-lg max-w-xs truncate font-body-md text-body-md">أفضل استثمار قمت به لعملي هذا العام!</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-xs bg-warning-amber/10 text-warning-amber rounded-full text-xs font-bold border border-warning-amber/20">قيد المراجعة</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex gap-sm">
+<button class="p-xs text-growth-green hover:bg-growth-green/10 rounded transition-colors" title="نشر">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-xs text-danger-red hover:bg-danger-red/10 rounded transition-colors" title="إخفاء">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+<button class="p-xs text-primary hover:bg-primary/10 rounded transition-colors" title="رد">
+<span class="material-symbols-outlined">reply</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-md bg-surface-container-low flex items-center justify-between">
+<p class="font-label-md text-label-md text-on-surface-variant">عرض 1-10 من أصل 1,248 تقييم</p>
+<div class="flex gap-sm">
+<button class="p-xs bg-white border border-outline-variant rounded hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<button class="px-sm py-xs bg-primary text-on-primary rounded font-label-md text-label-md">1</button>
+<button class="px-sm py-xs bg-white border border-outline-variant text-on-surface-variant rounded font-label-md text-label-md hover:bg-surface-variant transition-colors">2</button>
+<button class="px-sm py-xs bg-white border border-outline-variant text-on-surface-variant rounded font-label-md text-label-md hover:bg-surface-variant transition-colors">3</button>
+<button class="p-xs bg-white border border-outline-variant rounded hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Overlay for mobile menu -->
+<div class="fixed inset-0 bg-black/50 z-40 hidden md:hidden" id="overlay" onclick="toggleSideNav()"></div>
+<!-- Micro-interaction Scripts -->
+<script>
+        function toggleSideNav() {
+            const sideNav = document.getElementById('sideNav');
+            const overlay = document.getElementById('overlay');
+            const isActive = sideNav.classList.contains('active');
+            
+            if (isActive) {
+                sideNav.classList.remove('active');
+                overlay.classList.add('hidden');
+            } else {
+                sideNav.classList.add('active');
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        // Add some animation to status pills on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const pills = document.querySelectorAll('.rounded-full');
+            pills.forEach((pill, index) => {
+                pill.style.opacity = '0';
+                pill.style.transform = 'translateY(5px)';
+                setTimeout(() => {
+                    pill.style.transition = 'all 0.4s ease-out';
+                    pill.style.opacity = '1';
+                    pill.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body></html>

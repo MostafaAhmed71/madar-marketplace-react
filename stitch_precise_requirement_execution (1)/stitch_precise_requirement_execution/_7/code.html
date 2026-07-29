@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>متجر مدار | مشترياتي</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e1e2e4",
+                    "secondary-fixed": "#ffdea6",
+                    "on-primary-fixed-variant": "#414176",
+                    "primary-fixed-dim": "#c2c1ff",
+                    "space-black": "#1F2937",
+                    "inverse-primary": "#c2c1ff",
+                    "background": "#f8f9fb",
+                    "primary": "#39396d",
+                    "on-surface-variant": "#47464f",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-tertiary-fixed": "#14124d",
+                    "surface-dim": "#d9dadc",
+                    "nebula-lavender": "#6B6BA8",
+                    "surface-container": "#edeef0",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#c7c5ff",
+                    "growth-green": "#22C55E",
+                    "primary-fixed": "#e2dfff",
+                    "on-tertiary-fixed-variant": "#40407a",
+                    "surface": "#f8f9fb",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary": "#7b5800",
+                    "secondary-fixed-dim": "#ffbb0c",
+                    "outline": "#777680",
+                    "on-surface": "#191c1e",
+                    "outline-variant": "#c8c5d0",
+                    "tertiary-fixed": "#e2dfff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#191c1e",
+                    "surface-bright": "#f8f9fb",
+                    "tertiary": "#383871",
+                    "surface-tint": "#595990",
+                    "secondary-container": "#f9b500",
+                    "on-secondary-container": "#684a00",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#505086",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#151448",
+                    "warning-amber": "#F59E0B",
+                    "tertiary-container": "#4f4f8a",
+                    "tertiary-fixed-dim": "#c2c1ff",
+                    "surface-container-highest": "#e1e2e4",
+                    "on-tertiary-container": "#c6c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e7e8ea",
+                    "inverse-surface": "#2e3132",
+                    "danger-red": "#EF4444",
+                    "on-secondary-fixed": "#271900",
+                    "surface-container-low": "#f3f4f6",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "sm": "8px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "2xl": "48px",
+                    "xs": "4px",
+                    "gutter": "20px",
+                    "3xl": "64px",
+                    "xl": "32px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["IBM Plex Sans Arabic"],
+                    "title-lg": ["IBM Plex Sans Arabic"],
+                    "code-sm": ["jetbrainsMono"],
+                    "display-lg": ["IBM Plex Sans Arabic"],
+                    "headline-md": ["IBM Plex Sans Arabic"],
+                    "body-lg": ["IBM Plex Sans Arabic"],
+                    "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                    "headline-lg": ["IBM Plex Sans Arabic"],
+                    "body-md": ["IBM Plex Sans Arabic"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #f8f9fb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .nebula-glow {
+            box-shadow: 0 0 20px rgba(107, 107, 168, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<header class="bg-surface shadow-sm sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-xl">
+<span class="text-headline-md font-headline-md font-bold text-primary">متجر مدار</span>
+<div class="hidden md:flex gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">الرئيسية</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">المصادر</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">العروض</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">من نحن</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary p-base">shopping_cart</button>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-2xl min-h-screen">
+<!-- Welcome Section -->
+<section class="mb-3xl">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-sm">مرحباً بك في مشترياتك</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">هنا يمكنك العثور على جميع الملفات الرقمية التي قمت باقتنائها من متجر مدار.</p>
+</section>
+<!-- Sidebar + Content Grid -->
+<div class="flex flex-col md:flex-row gap-xl">
+<!-- Side Navigation (Account context) -->
+<aside class="md:w-64 flex flex-col gap-sm">
+<a class="flex items-center gap-md p-md bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                    طـلـبـاتـي
+                </a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">favorite</span>
+                    المفضلة
+                </a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    الإعدادات
+                </a>
+<hr class="my-md border-outline-variant"/>
+<a class="flex items-center gap-md p-md text-danger-red hover:bg-error-container rounded-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    تسجيل الخروج
+                </a>
+</aside>
+<!-- Main Content: My Downloads -->
+<div class="flex-1">
+<div class="flex flex-col gap-lg">
+<!-- Product Card 1: Ready to Download -->
+<div class="glass-card rounded-xl p-lg flex flex-col sm:flex-row items-center gap-lg nebula-glow group hover:border-primary transition-all">
+<div class="w-32 h-24 rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional high-quality cover for a digital educational resource. The design features cosmic motifs, deep purple and blue nebula clouds, and crisp white typography in Arabic. The lighting is ethereal and sophisticated, representing a premium digital product in a celestial-themed education store." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTCkmmJD7jkhXk2NVKZ1q-B16xoCQL04OYMfa3Jk2CcU7x05151rR3wVxQtaLh54YBkPQR3Vkh-bD__O_m87NtZQBQgNRKUjxuWhGieKJJzf43MfEScrtOaVS0Dse_XbRhOzPZfaA1pZU2RH5z7Pfn5QfBbTqV8yErDqZ8ghFeHuUrxVFmGNVfGd5MdkQ01pFSL3v_GbEnZc4qsuxnwwbScO6Shv0yDAtb8h3oNaf9KqHnFmR92Ib7iQEhZTDcbigEyIpcs5_bMIM"/>
+</div>
+<div class="flex-1 text-center sm:text-right">
+<h3 class="font-title-lg text-title-lg text-primary mb-xs">دليل التصميم التعليمي المتكامل</h3>
+<div class="flex flex-wrap justify-center sm:justify-start gap-md text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    12 أكتوبر 2023
+                                </span>
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                                    PDF (25 MB)
+                                </span>
+</div>
+</div>
+<div class="flex flex-col gap-sm items-center sm:items-end">
+<span class="px-md py-xs bg-growth-green/10 text-growth-green rounded-full font-label-md text-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                مـكتمل
+                            </span>
+<button class="flex items-center gap-xs px-xl py-md bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all scale-95 active:scale-90">
+<span class="material-symbols-outlined">download</span>
+                                تحميل الملف
+                            </button>
+</div>
+</div>
+<!-- Product Card 2: Pending Approval -->
+<div class="glass-card rounded-xl p-lg flex flex-col sm:flex-row items-center gap-lg opacity-90 grayscale-[0.3]">
+<div class="w-32 h-24 rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A sleek digital product thumbnail for an online course bundle. The artwork shows glowing geometric constellations on a deep space-black background with subtle Nebula Lavender highlights. The aesthetic is corporate and modern, focusing on clarity and professional digital content creation for Arabic educators." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2QV6Bu9D8skfFTt57mkmzXylhz0OASKE61mq3VnNA61r9Qudx_a_5jMhb6sn1DgpTQVgO9JfkGyKPFGF2mtVW9_zvFBM15UWhtAaMiAmVxn_3ukZ0hDFR9fRl2sDIQzdy1v3ZDknJxcwYajvyPkPvcss47b9TrBZgDRn0CGj7NY5qFSdO2zDUuMP0FASSv5JN-JxYHvUn9bERTDIz18KXOWQIvZEeFmkVGcnDYXSU281k5Z25jJoZ3XkSUb5TNkHbUxZBPEd7IPQ"/>
+</div>
+<div class="flex-1 text-center sm:text-right">
+<h3 class="font-title-lg text-title-lg text-primary mb-xs">حزمة قوالب كانفا التفاعلية</h3>
+<div class="flex flex-wrap justify-center sm:justify-start gap-md text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    15 أكتوبر 2023
+                                </span>
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">link</span>
+                                    رابط خارجي
+                                </span>
+</div>
+</div>
+<div class="flex flex-col gap-sm items-center sm:items-end">
+<span class="px-md py-xs bg-warning-amber/10 text-warning-amber rounded-full font-label-md text-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                قيد الانتظار
+                            </span>
+<button class="flex items-center gap-xs px-xl py-md bg-outline-variant text-on-surface-variant rounded-lg font-label-md text-label-md cursor-not-allowed opacity-50" disabled="">
+<span class="material-symbols-outlined">download</span>
+                                تحميل الملف
+                            </button>
+</div>
+</div>
+<!-- Product Card 3: Ready to Download -->
+<div class="glass-card rounded-xl p-lg flex flex-col sm:flex-row items-center gap-lg nebula-glow group hover:border-primary transition-all">
+<div class="w-32 h-24 rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Visual representation of a digital workbook for professional development. The cover features minimalist celestial icons like stars and moons combined with academic tools like pens and rulers. The color scheme is professional Orbit Purple and Stellar Gray, set against a bright, airy background for a high-end educational feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC36C0fLBAsFcwLeH3SOxVz6XO4Pmj9Wm5WOvam5JB_Y__qGxUw8YgpJj4MAd6v8nyPRn19XkohfIxpAVn-h1YocIb-XVlYRdCOYu6-fby4c-lLdsffWNKAMdCazkfBo5JOeNiMuw2kgbicIz0gRhCWyAP543om9hP0JsM2zdtyxUtddD6Mi01ueGi-OP03WwlK0wsOQS11QVwjj6MxSfWHLiESOFisi30z7VajyvI_RdwyesWlxUa3mYjjhvxeQSCKPI8tOyO7q-M"/>
+</div>
+<div class="flex-1 text-center sm:text-right">
+<h3 class="font-title-lg text-title-lg text-primary mb-xs">كراسة التخطيط الأكاديمي السنوية</h3>
+<div class="flex flex-wrap justify-center sm:justify-start gap-md text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    05 سبتمبر 2023
+                                </span>
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                                    DOCX (12 MB)
+                                </span>
+</div>
+</div>
+<div class="flex flex-col gap-sm items-center sm:items-end">
+<span class="px-md py-xs bg-growth-green/10 text-growth-green rounded-full font-label-md text-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                مـكتمل
+                            </span>
+<button class="flex items-center gap-xs px-xl py-md bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all scale-95 active:scale-90">
+<span class="material-symbols-outlined">download</span>
+                                تحميل الملف
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-2xl px-lg flex flex-col items-center gap-lg bg-space-black text-white">
+<span class="text-headline-md font-headline-md text-secondary-fixed">متجر مدار</span>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">سياسة الخصوصية</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">شروط الاستخدام</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">طرق الدفع</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">الأسئلة الشائعة</a>
+</div>
+<p class="font-body-md text-body-md opacity-80 text-center">© 2024 متجر مدار التعليمي. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                if(!button.disabled) {
+                    button.style.transform = 'translateY(-2px)';
+                }
+            });
+            button.addEventListener('mouseleave', () => {
+                if(!button.disabled) {
+                    button.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Simulating a notification if needed
+        const downloadButtons = document.querySelectorAll('button:not([disabled])');
+        downloadButtons.forEach(btn => {
+            if(btn.innerText.includes('تحميل')) {
+                btn.onclick = () => {
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> جاري التحميل...';
+                    btn.classList.add('bg-nebula-lavender');
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = '<span class="material-symbols-outlined">check</span> تم التحميل';
+                        btn.classList.remove('bg-nebula-lavender');
+                        btn.classList.add('bg-growth-green');
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.classList.remove('bg-growth-green');
+                        }, 2000);
+                    }, 1500);
+                };
+            }
+        });
+    </script>
+</body></html>

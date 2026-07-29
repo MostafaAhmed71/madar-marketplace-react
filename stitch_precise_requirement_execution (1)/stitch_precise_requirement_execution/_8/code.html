@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>المفضلة | متجر مدار</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffdea6",
+                    "space-black": "#1F2937",
+                    "surface-dim": "#d9dadc",
+                    "surface-container-highest": "#e1e2e4",
+                    "on-secondary-fixed": "#271900",
+                    "inverse-primary": "#c2c1ff",
+                    "on-secondary-container": "#684a00",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#c6c5ff",
+                    "primary-fixed": "#e2dfff",
+                    "surface-variant": "#e1e2e4",
+                    "on-surface-variant": "#47464f",
+                    "surface-container-high": "#e7e8ea",
+                    "on-tertiary": "#ffffff",
+                    "nebula-lavender": "#6B6BA8",
+                    "error": "#ba1a1a",
+                    "surface": "#f8f9fb",
+                    "on-tertiary-fixed-variant": "#40407a",
+                    "secondary-fixed-dim": "#ffbb0c",
+                    "surface-bright": "#f8f9fb",
+                    "tertiary-container": "#4f4f8a",
+                    "tertiary": "#383871",
+                    "on-primary-fixed": "#151448",
+                    "on-background": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c2c1ff",
+                    "surface-container": "#edeef0",
+                    "on-tertiary-fixed": "#14124d",
+                    "tertiary-fixed-dim": "#c2c1ff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-primary": "#ffffff",
+                    "background": "#f8f9fb",
+                    "warning-amber": "#F59E0B",
+                    "outline": "#777680",
+                    "inverse-surface": "#2e3132",
+                    "on-surface": "#191c1e",
+                    "primary": "#39396d",
+                    "on-primary-container": "#c7c5ff",
+                    "growth-green": "#22C55E",
+                    "outline-variant": "#c8c5d0",
+                    "on-primary-fixed-variant": "#414176",
+                    "surface-tint": "#595990",
+                    "surface-container-low": "#f3f4f6",
+                    "primary-container": "#505086",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#e2dfff",
+                    "secondary": "#7b5800",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#f9b500",
+                    "danger-red": "#EF4444"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xs": "4px",
+                    "2xl": "48px",
+                    "container-max": "1280px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "gutter": "20px",
+                    "base": "4px",
+                    "3xl": "64px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["IBM Plex Sans Arabic"],
+                    "display-lg": ["IBM Plex Sans Arabic"],
+                    "title-lg": ["IBM Plex Sans Arabic"],
+                    "body-lg": ["IBM Plex Sans Arabic"],
+                    "headline-md": ["IBM Plex Sans Arabic"],
+                    "label-md": ["IBM Plex Sans Arabic"],
+                    "body-md": ["IBM Plex Sans Arabic"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #f8f9fb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">
+                متجر مدار
+            </div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex gap-xl items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md" href="#">الرئيسية</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md" href="#">المصادر</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md" href="#">العروض</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors font-body-md text-body-md" href="#">من نحن</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary p-xs hover:bg-surface-container rounded-full transition-all active:scale-95">shopping_cart</button>
+<button class="material-symbols-outlined text-primary p-xs hover:bg-surface-container rounded-full transition-all active:scale-95">account_circle</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-lg py-2xl">
+<!-- Wishlist Header -->
+<div class="mb-3xl flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-xs">المفضلة</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">جميع المواد التعليمية التي نالت إعجابك في مكان واحد.</p>
+</div>
+<div class="bg-primary-container text-on-primary-container px-md py-sm rounded-xl flex items-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-md text-label-md">4 عناصر</span>
+</div>
+</div>
+<!-- Wishlist Content Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-lg" id="wishlist-grid">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional high-quality educational resource cover for a physics course, featuring glowing cosmic diagrams and planetary orbits. The design uses a deep Orbit Purple and Nebula Lavender color scheme, suggesting a premium celestial discovery theme. The lighting is soft and cinematic, highlighting the clean, modern layout of the workbook." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAvKQ862gaiEMp_AIyh_s0jEYZyBsq1xLGjXgmAyajhVIbWBsdGzfhMiSPQQnpZ0Mpr_Z8dDE_85MSZA3i3R4mKe9SeFiw3B6EC7d-dzXTCz6G9WuQD7EkZa32nsMc4r8dRLTvXEjeMB46OZpj_FGNG-xFZtp738Q9OyxpAVktvVozdvK2jwLAG9aOMn4x6Gi_64NKCPSAs5gtTsQi-UZUNApfzdiPyQNWWetBrAfYtKJBw4BgNUd8vmV4c0562tx6GW4bp0ft_N8"/>
+<button class="absolute top-sm right-sm bg-surface/90 hover:bg-error/10 hover:text-error text-outline p-xs rounded-full glass-effect transition-colors" title="إزالة من المفضلة">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-sm left-sm bg-nebula-lavender text-white px-sm py-base rounded-lg text-[12px] font-medium">PDF</div>
+</div>
+<div class="p-md">
+<h3 class="font-title-lg text-title-lg text-space-black mb-sm line-clamp-1">رحلة عبر المجرات: دليل الفيزياء</h3>
+<div class="flex items-center justify-between mb-lg">
+<span class="font-headline-md text-headline-md text-primary">89 ر.س</span>
+<div class="flex items-center gap-xs text-warning-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface-variant">4.8</span>
+</div>
+</div>
+<button class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-md text-label-md py-sm rounded-lg flex items-center justify-center gap-sm transition-all active:scale-95">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                        أضف إلى السلة
+                    </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A sophisticated digital math template set displayed on a sleek tablet screen. The design features geometric patterns and golden ratios with Solar Gold accents against a crisp white background. The aesthetic is clean, professional, and corporate, emphasizing precision and mathematical clarity in a modern marketplace setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkiWlW1iDLOeWwv2FDnc8q4qHF070PJyW7AzkUAzrEqXTT6tW9WWmlTsHp1nm-Vg4SbYqNJEFToOXq5QqZ39Q4TT6bR7j25aopAF4N3gXO1fCXHe_egjEcjewU-nbnwlsx78oiSFWx_CiMAVS6oMqf97Wq2fUTIi0fX4DKSMxp2ORq93G_OQd63jor5ssk-uHJOtGK2sxwmDP7NXqBgtXuidwF6qV0A5wcs9yZb_dYuYUxDKTwQky7kSmk_KcLpwlGAeJIo41KAKs"/>
+<button class="absolute top-sm right-sm bg-surface/90 hover:bg-error/10 hover:text-error text-outline p-xs rounded-full glass-effect transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-sm left-sm bg-growth-green text-white px-sm py-base rounded-lg text-[12px] font-medium">قوالب Canva</div>
+</div>
+<div class="p-md">
+<h3 class="font-title-lg text-title-lg text-space-black mb-sm line-clamp-1">حقيبة المعلم المتميزة - الرياضيات</h3>
+<div class="flex items-center justify-between mb-lg">
+<span class="font-headline-md text-headline-md text-primary">120 ر.س</span>
+<div class="flex items-center gap-xs text-warning-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface-variant">4.9</span>
+</div>
+</div>
+<button class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-md text-label-md py-sm rounded-lg flex items-center justify-center gap-sm transition-all active:scale-95">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                        أضف إلى السلة
+                    </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vibrant and engaging set of digital Arabic calligraphy flashcards for children. The art style is playful yet refined, with soft pastel gradients and cosmic star motifs. Each card shows a beautifully rendered letter with a corresponding planetary illustration. The lighting is bright and inviting, perfect for an educational environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeTWnSGh-ohw1eTHxMTGoitmtRm_1SuAJsPzhQW_nRdLyOtKcuZbzLGEQsuqWbqYTYFYm7BTRk964Pa0oLPLGcnsRRwdPvMQsZZnwzttQpwxMYv_8EN8qNVJTqvKe0FR9-oWZsxrhgB_2y2-HnQS_-1udBkgzzDV6DLevOG_nzWVzwcqimdvOssAd1VAV5y5qn8i8EKk5fRWc_R8cNiycRWSsbppRuodwIU4blJVdvDOz6G58LMMKMXAMqULlqXRMe21w8n-1ECx8"/>
+<button class="absolute top-sm right-sm bg-surface/90 hover:bg-error/10 hover:text-error text-outline p-xs rounded-full glass-effect transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-sm left-sm bg-nebula-lavender text-white px-sm py-base rounded-lg text-[12px] font-medium">بطاقات رقمية</div>
+</div>
+<div class="p-md">
+<h3 class="font-title-lg text-title-lg text-space-black mb-sm line-clamp-1">بطاقات الحروف العربية الفضائية</h3>
+<div class="flex items-center justify-between mb-lg">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary">45 ر.س</span>
+<span class="text-label-md text-outline line-through">65 ر.س</span>
+</div>
+<div class="flex items-center gap-xs text-warning-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface-variant">4.7</span>
+</div>
+</div>
+<button class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-md text-label-md py-sm rounded-lg flex items-center justify-center gap-sm transition-all active:scale-95">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                        أضف إلى السلة
+                    </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An elegant collection of chemistry lab report templates with a sleek, scientific look. The covers feature minimalist molecular structures in Orbit Purple with deep blue shadows. The design is presented in a clean white studio setting with soft top-down lighting, emphasizing a high-end, professional academic resource." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWOkb5riDmqre-r7eDpHZdFaSeypjuFmF1KM0-vntBs1C-0SU6P_GVkVUI4Oa9KdbcSUzii6qajcKpp17ll2HYLt2p9ZOtRXZHMEy9AfcBY-_XOlbNwtP6EJK09eJzwAL4ZLpP0bBBMAURzMcPdvv59azzYOYS_dftDn0NEqZxS25gC2-dMwuCNW_v9OxqlhugPks5_aWdb9EylO50ZKRBu1qeYvJ7TvlwCECglDnDESf3LQ-moGDbpm6UUPBGhOuk1phEf19hWwk"/>
+<button class="absolute top-sm right-sm bg-surface/90 hover:bg-error/10 hover:text-error text-outline p-xs rounded-full glass-effect transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-sm left-sm bg-growth-green text-white px-sm py-base rounded-lg text-[12px] font-medium">Excel</div>
+</div>
+<div class="p-md">
+<h3 class="font-title-lg text-title-lg text-space-black mb-sm line-clamp-1">نماذج تقارير الكيمياء التحليلية</h3>
+<div class="flex items-center justify-between mb-lg">
+<span class="font-headline-md text-headline-md text-primary">55 ر.س</span>
+<div class="flex items-center gap-xs text-warning-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface-variant">5.0</span>
+</div>
+</div>
+<button class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-md text-label-md py-sm rounded-lg flex items-center justify-center gap-sm transition-all active:scale-95">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                        أضف إلى السلة
+                    </button>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex flex-col items-center justify-center py-3xl text-center" id="empty-state">
+<div class="w-64 h-64 mb-xl opacity-20 grayscale">
+
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-sm">قائمة أمنياتك فارغة</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl max-w-md mx-auto">
+                يبدو أنك لم تضف أي شيء لمفضلتك بعد. ابدأ باستكشاف المصادر التعليمية المميزة وأضف ما يعجبك هنا!
+            </p>
+<a class="bg-primary hover:bg-primary-container text-on-primary px-3xl py-md rounded-xl font-title-lg text-title-lg transition-all active:scale-95 inline-flex items-center gap-md" href="#">
+<span class="material-symbols-outlined">rocket_launch</span>
+                ابدأ التسوق الآن
+            </a>
+</div>
+</main>
+<!-- SideNavBar (Cart Preview) - Hidden logic would be here -->
+<aside class="fixed inset-y-0 right-0 z-50 flex flex-col p-md bg-surface-container-lowest dark:bg-inverse-surface shadow-xl w-80 translate-x-full transition-transform duration-300" id="side-nav">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-title-lg text-title-lg text-primary">سلة التسوق</h2>
+<button class="material-symbols-outlined p-sm hover:bg-surface-variant rounded-full" onclick="toggleSideNav()">close</button>
+</div>
+<div class="flex-grow flex flex-col gap-md overflow-y-auto">
+<!-- Empty cart message as placeholder -->
+<p class="font-label-md text-label-md text-on-surface-variant text-center mt-2xl">السلة فارغة حالياً</p>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-title-lg text-title-lg active:scale-95 transition-all">إتمام عملية الشراء</button>
+</div>
+</aside>
+<!-- Footer -->
+<footer class="bg-space-black text-surface-variant w-full py-2xl px-lg flex flex-col items-center gap-lg">
+<div class="text-headline-md font-headline-md text-secondary-fixed">متجر مدار</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="font-label-md text-label-md hover:text-white transition-colors" href="#">سياسة الخصوصية</a>
+<a class="font-label-md text-label-md hover:text-white transition-colors" href="#">شروط الاستخدام</a>
+<a class="font-label-md text-label-md hover:text-white transition-colors" href="#">طرق الدفع</a>
+<a class="font-label-md text-label-md hover:text-white transition-colors" href="#">الأسئلة الشائعة</a>
+</div>
+<div class="font-body-md text-body-md opacity-70">© 2024 متجر مدار التعليمي. جميع الحقوق محفوظة.</div>
+</footer>
+<script>
+        function toggleSideNav() {
+            const nav = document.getElementById('side-nav');
+            nav.classList.toggle('translate-x-full');
+            nav.classList.toggle('translate-x-0');
+        }
+
+        // Simple mock for "Remove" interaction
+        document.querySelectorAll('button[title="إزالة من المفضلة"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const card = this.closest('.bg-surface-container-lowest');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    card.remove();
+                    checkEmpty();
+                }, 300);
+            });
+        });
+
+        function checkEmpty() {
+            const grid = document.getElementById('wishlist-grid');
+            const empty = document.getElementById('empty-state');
+            if (grid.children.length === 0) {
+                grid.classList.add('hidden');
+                empty.classList.remove('hidden');
+            }
+        }
+    </script>
+</body></html>

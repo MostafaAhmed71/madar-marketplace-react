@@ -6,4 +6,4 @@
 
 define('API_KEY', 'IQZQHGMmImrxCKFoQJQAqXjmKD19HEOVHssUmJw/VtE');
 define('UPLOAD_DIR', __DIR__ . '/../uploads');
-define('PUBLIC_URL', 'https://northelite.tech/uploads');
+define('PUBLIC_URL', 'https://market.northelite.tech/uploads');

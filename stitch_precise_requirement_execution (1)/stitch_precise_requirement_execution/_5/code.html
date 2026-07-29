@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>رفع إيصال التحويل | متجر مدار</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #f8f9fb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .celestial-glow {
+            box-shadow: 0 0 40px rgba(57, 57, 109, 0.05);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e1e2e4",
+                        "secondary-fixed": "#ffdea6",
+                        "on-primary-fixed-variant": "#414176",
+                        "primary-fixed-dim": "#c2c1ff",
+                        "space-black": "#1F2937",
+                        "inverse-primary": "#c2c1ff",
+                        "background": "#f8f9fb",
+                        "primary": "#39396d",
+                        "on-surface-variant": "#47464f",
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-tertiary-fixed": "#14124d",
+                        "surface-dim": "#d9dadc",
+                        "nebula-lavender": "#6B6BA8",
+                        "surface-container": "#edeef0",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#c7c5ff",
+                        "growth-green": "#22C55E",
+                        "primary-fixed": "#e2dfff",
+                        "on-tertiary-fixed-variant": "#40407a",
+                        "surface": "#f8f9fb",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary": "#7b5800",
+                        "secondary-fixed-dim": "#ffbb0c",
+                        "outline": "#777680",
+                        "on-surface": "#191c1e",
+                        "outline-variant": "#c8c5d0",
+                        "tertiary-fixed": "#e2dfff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "surface-bright": "#f8f9fb",
+                        "tertiary": "#383871",
+                        "surface-tint": "#595990",
+                        "secondary-container": "#f9b500",
+                        "on-secondary-container": "#684a00",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#505086",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#151448",
+                        "warning-amber": "#F59E0B",
+                        "tertiary-container": "#4f4f8a",
+                        "tertiary-fixed-dim": "#c2c1ff",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-tertiary-container": "#c6c5ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e7e8ea",
+                        "inverse-surface": "#2e3132",
+                        "danger-red": "#EF4444",
+                        "on-secondary-fixed": "#271900",
+                        "surface-container-low": "#f3f4f6",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "3xl": "64px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="bg-surface shadow-sm sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-md">
+<span class="text-headline-md font-headline-md font-bold text-primary">متجر مدار</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">الرئيسية</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md text-body-md" href="#">المصادر</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md text-body-md" href="#">العروض</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md text-body-md" href="#">من نحن</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all scale-95 active:opacity-80">shopping_cart</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all scale-95 active:opacity-80">account_circle</button>
+</div>
+</div>
+</header>
+<main class="min-h-screen pt-xl pb-3xl px-gutter relative overflow-hidden">
+<!-- Atmospheric Background Elements -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
+<div class="absolute top-[-10%] left-[-5%] w-96 h-96 bg-primary-fixed opacity-20 rounded-full blur-3xl"></div>
+<div class="absolute bottom-[-5%] right-[-5%] w-80 h-80 bg-secondary-fixed opacity-30 rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-3xl mx-auto">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-base mb-lg text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary" href="#">طلباتي</a>
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span class="text-primary font-bold">رفع إيصال التحويل</span>
+</nav>
+<!-- Order Success Header -->
+<div class="mb-xl text-center">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-fixed mb-md">
+<span class="material-symbols-outlined text-primary text-[32px]">receipt_long</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-xs">تأكيد عملية الدفع</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">رقم الطلب: <span class="font-bold text-on-surface">ORD-2024-0001</span></p>
+</div>
+<!-- Main Form Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-xl p-lg md:p-xl celestial-glow relative overflow-hidden">
+<!-- Trust Indicator Stripe -->
+<div class="absolute top-0 right-0 left-0 h-1.5 bg-gradient-to-l from-primary via-nebula-lavender to-secondary"></div>
+<div class="flex flex-col gap-xl">
+<!-- Info Alert -->
+<div class="flex gap-md bg-primary-fixed/30 p-md rounded-lg border border-primary-fixed">
+<span class="material-symbols-outlined text-primary">info</span>
+<div>
+<p class="font-label-md text-label-md text-primary font-bold mb-xs">عملية مراجعة يدوية</p>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant">سيتم مراجعة إيصالك من قبل فريقنا المختص خلال 24 ساعة كحد أقصى. سيتم إرسال إشعار لك بمجرد تفعيل الطلب.</p>
+</div>
+</div>
+<form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Upload Section (Full Width) -->
+<div class="md:col-span-2">
+<label class="block font-title-lg text-title-lg text-on-surface mb-sm">صورة إيصال التحويل</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-xl flex flex-col items-center justify-center bg-surface-container-low hover:border-primary hover:bg-primary-fixed/10 transition-all cursor-pointer group" id="dropzone">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[32px]">cloud_upload</span>
+</div>
+<p class="font-title-lg text-title-lg text-primary mb-xs">اسحب وأفلت الصورة هنا</p>
+<p class="font-label-md text-label-md text-on-surface-variant">أو انقر لاختيار ملف (JPG, PNG, PDF)</p>
+<input accept="image/*,.pdf" class="hidden" id="fileInput" type="file"/>
+</div>
+<div class="hidden mt-md p-md bg-surface-container rounded-lg border border-outline-variant flex items-center justify-between" id="previewContainer">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-growth-green">check_circle</span>
+<span class="font-label-md text-label-md text-on-surface" id="fileName">receipt_2024.jpg</span>
+</div>
+<button class="text-danger-red font-label-md text-label-md hover:underline" id="removeFile" type="button">حذف</button>
+</div>
+</div>
+<!-- Amount Field -->
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface" for="amount">المبلغ المحول (ر.س)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-md font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all pr-12" id="amount" placeholder="0.00" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">payments</span>
+</div>
+</div>
+<!-- Date Field -->
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface" for="date">تاريخ التحويل</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-md font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all pr-12" id="date" type="date"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">calendar_month</span>
+</div>
+</div>
+<!-- Notes Field (Full Width) -->
+<div class="md:col-span-2 space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface" for="notes">ملاحظات إضافية (اختياري)</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-md font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="notes" placeholder="أضف أي تفاصيل أخرى هنا..." rows="3"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="md:col-span-2 pt-md">
+<button class="w-full bg-primary text-on-primary font-title-lg text-title-lg py-md rounded-xl shadow-lg hover:bg-primary-container transition-all scale-95 active:scale-90 flex items-center justify-center gap-md" type="submit">
+<span>تأكيد إرسال الإيصال</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+<p class="text-center mt-md font-label-md text-label-md text-on-surface-variant">
+                                بالضغط على تأكيد، أنت تقر بأن جميع البيانات المدخلة صحيحة.
+                            </p>
+</div>
+</form>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="mt-2xl grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="flex flex-col items-center text-center p-md">
+<span class="material-symbols-outlined text-nebula-lavender text-[32px] mb-sm">verified_user</span>
+<h3 class="font-title-lg text-title-lg text-primary">دفع آمن</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">جميع التحويلات يتم التحقق منها بأمان تام.</p>
+</div>
+<div class="flex flex-col items-center text-center p-md">
+<span class="material-symbols-outlined text-nebula-lavender text-[32px] mb-sm">support_agent</span>
+<h3 class="font-title-lg text-title-lg text-primary">دعم مستمر</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">فريقنا متاح لمساعدتك في حال واجهت أي مشكلة.</p>
+</div>
+<div class="flex flex-col items-center text-center p-md">
+<span class="material-symbols-outlined text-nebula-lavender text-[32px] mb-sm">update</span>
+<h3 class="font-title-lg text-title-lg text-primary">تفعيل سريع</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">بمجرد تأكيد الإيصال، سيتم تفعيل طلبك فوراً.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-space-black text-tertiary-fixed w-full py-2xl px-lg flex flex-col items-center gap-lg">
+<div class="text-headline-md font-headline-md text-secondary-fixed">متجر مدار</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="text-surface-variant hover:text-white transition-colors font-label-md text-label-md" href="#">سياسة الخصوصية</a>
+<a class="text-surface-variant hover:text-white transition-colors font-label-md text-label-md" href="#">شروط الاستخدام</a>
+<a class="text-surface-variant hover:text-white transition-colors font-label-md text-label-md" href="#">طرق الدفع</a>
+<a class="text-surface-variant hover:text-white transition-colors font-label-md text-label-md" href="#">الأسئلة الشائعة</a>
+</div>
+<p class="text-surface-variant font-body-md text-body-md opacity-90">© 2024 متجر مدار التعليمي. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+        // Micro-interactions for File Upload
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('fileInput');
+        const previewContainer = document.getElementById('previewContainer');
+        const fileNameLabel = document.getElementById('fileName');
+        const removeFile = document.getElementById('removeFile');
+
+        dropzone.addEventListener('click', () => fileInput.click());
+
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('border-primary', 'bg-primary-fixed/20');
+        });
+
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('border-primary', 'bg-primary-fixed/20');
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('border-primary', 'bg-primary-fixed/20');
+            if (e.dataTransfer.files.length) {
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        removeFile.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fileInput.value = '';
+            previewContainer.classList.add('hidden');
+            dropzone.classList.remove('hidden');
+        });
+
+        function handleFile(file) {
+            fileNameLabel.textContent = file.name;
+            previewContainer.classList.remove('hidden');
+            dropzone.classList.add('hidden');
+        }
+
+        // Form submission animation/feedback
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> جاري الإرسال...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('تم إرسال إيصالك بنجاح! شكراً لصبرك.');
+                btn.innerHTML = '<span>تم الإرسال</span><span class="material-symbols-outlined">check</span>';
+                btn.classList.replace('bg-primary', 'bg-growth-green');
+            }, 1500);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>متجر مدار التعليمي | مصادر رقمية احترافية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#c2c1ff",
+                      "inverse-on-surface": "#f0f1f3",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#c2c1ff",
+                      "on-tertiary-fixed": "#14124d",
+                      "surface-container": "#edeef0",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#c7c5ff",
+                      "on-surface": "#191c1e",
+                      "primary": "#39396d",
+                      "outline": "#777680",
+                      "inverse-surface": "#2e3132",
+                      "background": "#f8f9fb",
+                      "warning-amber": "#F59E0B",
+                      "surface-container-low": "#f3f4f6",
+                      "on-primary-fixed-variant": "#414176",
+                      "surface-tint": "#595990",
+                      "growth-green": "#22C55E",
+                      "outline-variant": "#c8c5d0",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#f9b500",
+                      "danger-red": "#EF4444",
+                      "secondary": "#7b5800",
+                      "on-secondary-fixed-variant": "#5d4200",
+                      "tertiary-fixed": "#e2dfff",
+                      "error-container": "#ffdad6",
+                      "primary-container": "#505086",
+                      "inverse-primary": "#c2c1ff",
+                      "surface-container-highest": "#e1e2e4",
+                      "on-secondary-fixed": "#271900",
+                      "on-secondary-container": "#684a00",
+                      "surface-dim": "#d9dadc",
+                      "secondary-fixed": "#ffdea6",
+                      "space-black": "#1F2937",
+                      "surface-variant": "#e1e2e4",
+                      "primary-fixed": "#e2dfff",
+                      "on-tertiary-container": "#c6c5ff",
+                      "on-error-container": "#93000a",
+                      "surface": "#f8f9fb",
+                      "on-tertiary-fixed-variant": "#40407a",
+                      "error": "#ba1a1a",
+                      "nebula-lavender": "#6B6BA8",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#47464f",
+                      "surface-container-high": "#e7e8ea",
+                      "on-primary-fixed": "#151448",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#4f4f8a",
+                      "tertiary": "#383871",
+                      "secondary-fixed-dim": "#ffbb0c",
+                      "surface-bright": "#f8f9fb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "base": "4px",
+                      "3xl": "64px",
+                      "gutter": "20px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "code-sm": ["IBM Plex Sans Arabic"],
+                      "headline-lg": ["IBM Plex Sans Arabic"],
+                      "display-lg": ["IBM Plex Sans Arabic"],
+                      "headline-md": ["IBM Plex Sans Arabic"],
+                      "body-lg": ["IBM Plex Sans Arabic"],
+                      "title-lg": ["IBM Plex Sans Arabic"],
+                      "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                      "body-md": ["IBM Plex Sans Arabic"],
+                      "label-md": ["IBM Plex Sans Arabic"]
+              },
+              "fontSize": {
+                      "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #f8f9fb;
+            color: #191c1e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .orbit-gradient {
+            background: radial-gradient(circle at top right, #c2c1ff22, transparent);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-md">
+<img alt="مدار التعليمية" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZht3LgtkB_WVqBlT0JCy8uH4Q_5l6H2DPu5hUeLWV1NYpD9646jeYDPlbRKwiA5-Wu_ELnmXMlmT_f9MBvbNPQZ6hiloPQTMdyVmvwpdldIZkHCCfBOFk8Wt5DAJwoso8AwyjwJg7z0iTMN7SWF9SpKICr97WZst0ZN4B0ZHcNQT8j8kh97xj8PauI8zj5WffwramSW62q9FNP-VLl43zx8yina7j_9FyRP3ogetpiKWs7SEhuYc29atC7gE0yCCfO6P0QMfRl7U"/>
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">متجر مدار</span>
+</div>
+<nav class="hidden md:flex gap-xl items-center">
+<a class="font-body-md text-body-md font-medium text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 transition-all" href="#">الرئيسية</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors" href="#">المصادر</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors" href="#">العروض</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors" href="#">من نحن</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary dark:text-inverse-primary scale-95 active:opacity-80 transition-all">shopping_cart</button>
+<button class="material-symbols-outlined text-primary dark:text-inverse-primary scale-95 active:opacity-80 transition-all">account_circle</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center overflow-hidden orbit-gradient">
+
+<div class="relative w-full max-w-container-max mx-auto px-lg grid md:grid-cols-2 gap-xl items-center py-3xl">
+<div class="space-y-xl" data-aos="fade-up">
+<h1 class="font-display-lg text-display-lg text-primary leading-tight">
+                        اكتشف آفاقاً جديدة <br/>
+<span class="text-secondary-container bg-primary px-4 py-1 rounded-lg">في التعليم الرقمي</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        متجر مدار يوفر للمعلمين والطلاب أجود المصادر التعليمية الرقمية الموثقة، من خطط الدروس إلى أوراق العمل التفاعلية.
+                    </p>
+<div class="relative max-w-lg group">
+<input class="w-full h-16 pr-14 pl-6 rounded-xl border-stellar-gray focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-body-md text-body-md shadow-sm" placeholder="ابحث عن اختبار، خطة درس، أو ورقة عمل..." type="text"/>
+<span class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-primary text-headline-md">search</span>
+<button class="absolute left-2 top-2 bottom-2 bg-secondary text-on-secondary px-lg rounded-lg font-label-md text-label-md hover:bg-on-secondary-container transition-colors">ابحث الآن</button>
+</div>
+<div class="flex gap-md items-center pt-md">
+<span class="font-label-md text-label-md text-on-surface-variant">شائع:</span>
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-md text-label-md hover:bg-primary-container hover:text-white cursor-pointer transition-colors">اختبارات نافس</span>
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-md text-label-md hover:bg-primary-container hover:text-white cursor-pointer transition-colors">تحضير رياضيات</span>
+</div>
+</div>
+<div class="hidden md:block relative h-[500px]">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+<div class="relative z-10 grid grid-cols-2 gap-md rotate-3 scale-110">
+<!-- Mockup Cards for visual flair -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-xl border border-outline-variant/20 -translate-y-8">
+<div class="aspect-[4/3] bg-surface-container-high rounded-lg mb-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A premium education resource card layout with a clean aesthetic, showing geometric shapes and a title in Arabic font 'خطة دروس متميزة', professional light-mode UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChIGsx2_q2NbQnjbazrlxLoQaMR4vq07_LZK2m7nEJBqG3m-bxK1coUQHwVnlFrsg14zpNQ1DLTpt1NER23R4JHaqeNaUs6p4EJowwLDxolwt2jA5xR_28toTGEEw7hqSnocFdfyp2NVU8yvEjWLw_6-7pf2Rmsor61YqvSFHbXGAkumLZT0YZ4ommkGSXx5d8uS8jDcCDn0pJSuurrWubN2rzdKVMuRfaY5ohC8RWbVxJXtdUZnux0sOc2TYJN3UJ1OVKrGU_MZU"/>
+</div>
+<div class="h-4 w-3/4 bg-surface-container-high rounded-full mb-2"></div>
+<div class="h-4 w-1/2 bg-surface-container-high rounded-full"></div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-xl border border-outline-variant/20 translate-y-8">
+<div class="aspect-[4/3] bg-surface-container-high rounded-lg mb-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A digital mockup of a colorful educational worksheet with icons for pens, books, and graduation caps. The background is a clean white, and the primary accent is a soft lavender purple." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgw1j7YXuPpevhkPCIgQnwvFc6ibtmI_Jbp4FYnWjgix01dZFMLqdf0VxHaDC6ShLz7MzYl9jizCWjZ6Ua03qd-oQ2ImtkRQhLKL9joF54rYizb2yk3RVy1-1w-WwbPA-W_QqGlsgSZVxtPn-85DbVEsNBpKNnacrWx9EWRBLCgmnOzuiHZRtfPg0vt1PURhBxvmghe3dfCuirOn0bZIlO16jLFQ5vxgAkw9y5O-FdEKztK46e6Yav-KcXAbhMJ-iGq4_IgBS3fqw"/>
+</div>
+<div class="h-4 w-3/4 bg-surface-container-high rounded-full mb-2"></div>
+<div class="h-4 w-1/2 bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Signals -->
+<section class="bg-primary text-white py-xl">
+<div class="max-w-container-max mx-auto px-lg flex flex-col md:flex-row justify-between gap-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary-fixed text-display-lg" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div>
+<h3 class="font-title-lg text-title-lg">مراجعة يدوية 24/7</h3>
+<p class="font-label-md text-label-md opacity-80">نضمن جودة كل ملف يتم رفعه خلال 24 ساعة</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary-fixed text-display-lg" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<div>
+<h3 class="font-title-lg text-title-lg">تحويل بنكي آمن</h3>
+<p class="font-label-md text-label-md opacity-80">عمليات دفع موثقة وتدقيق يدوي للإيصالات</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary-fixed text-display-lg" style="font-variation-settings: 'FILL' 1;">high_quality</span>
+<div>
+<h3 class="font-title-lg text-title-lg">جودة تعليمية عالية</h3>
+<p class="font-label-md text-label-md opacity-80">مصادر مصممة من قبل خبراء في الميدان</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Categories (Bento Style) -->
+<section class="py-3xl max-w-container-max mx-auto px-lg">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">تصفح حسب الفئة</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">كل ما تحتاجه للفصل الدراسي في مكان واحد</p>
+</div>
+<button class="flex items-center gap-xs font-label-md text-label-md text-primary hover:underline transition-all">عرض الكل <span class="material-symbols-outlined">chevron_left</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg h-auto md:h-[400px]">
+<!-- Tests -->
+<div class="md:col-span-2 bg-tertiary-fixed rounded-3xl p-xl flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-sm hover:shadow-xl transition-all">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-tertiary-fixed mb-2">الاختبارات</h3>
+<p class="font-body-md text-body-md text-on-tertiary-fixed/70 max-w-[200px]">نماذج اختبارات وزارية وفترية لجميع المراحل</p>
+</div>
+<div class="absolute -bottom-4 -left-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[180px]">quiz</span>
+</div>
+<div class="relative z-10 flex gap-sm mt-md">
+<span class="bg-white/50 px-md py-xs rounded-full font-label-md text-label-md">وزاري</span>
+<span class="bg-white/50 px-md py-xs rounded-full font-label-md text-label-md">فصلي</span>
+</div>
+</div>
+<!-- Lesson Plans -->
+<div class="bg-secondary-fixed rounded-3xl p-xl flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-sm hover:shadow-xl transition-all">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-secondary-fixed mb-2">خطط الدروس</h3>
+<p class="font-label-md text-label-md text-on-secondary-fixed/70">تحضير كامل وشامل</p>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="material-symbols-outlined text-6xl text-on-secondary-fixed/20">event_note</span>
+</div>
+</div>
+<!-- Worksheets -->
+<div class="bg-surface-container-high rounded-3xl p-xl flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-sm hover:shadow-xl transition-all">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">أوراق العمل</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">تفاعلية وقابلة للطباعة</p>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="material-symbols-outlined text-6xl text-primary/20">description</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Products Grid -->
+<section class="py-3xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex justify-between items-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary">أحدث المصادر المضافة</h2>
+<div class="flex gap-sm">
+<button class="p-sm rounded-full bg-white border border-outline-variant hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+<button class="p-sm rounded-full bg-white border border-outline-variant hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-2xl overflow-hidden group border border-outline-variant/30 hover:shadow-2xl transition-all hover:-translate-y-1">
+<div class="relative aspect-[4/3] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional preview of a math worksheet about calculus, designed with a clean grid background, elegant purple accents, and Arabic text 'رياضيات - المستوى الثالث'. High-quality digital rendering in light mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAls6DSu_MGXs9JjTmM4KtYhfqoONNk4ZcvSBmsJMUJgSnplZdQD3Jv6EpvuGUXGOerdl7x-wT-LNX9DTe3V3qapDlybeKJvQN1oBis2L5bRHohLLj9rPy5gl8i2xPymA07h6DwmyVjYQroOYvhZrS8JVbx5NA6C84NNXsJIj3YBkLgTI-IadCidhaHE_7Pfsx20Gc_pDXCU6fvNkH7r7hh4hP_EBnU4vlnu947Ts6AtzLTFYRMwJM98bgz7qcUxatExOaKfKHk22Y"/>
+<span class="absolute top-sm right-sm bg-primary text-white text-[10px] font-bold px-md py-1 rounded-full uppercase">PDF</span>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-lg text-title-lg text-on-surface line-clamp-1">مجموعة أوراق عمل الرياضيات</h3>
+<span class="material-symbols-outlined text-outline-variant hover:text-danger-red cursor-pointer">favorite</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">بواسطة: أ. سارة الأحمد</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-warning-amber text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold">4.8</span>
+<span class="font-label-md text-label-md text-on-surface-variant">(120 تقييم)</span>
+</div>
+<div class="flex justify-between items-center pt-md border-t border-outline-variant/10">
+<span class="font-headline-md text-headline-md text-primary">45.00 ر.س</span>
+<button class="p-sm bg-secondary-container text-on-secondary-container rounded-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-2xl overflow-hidden group border border-outline-variant/30 hover:shadow-2xl transition-all hover:-translate-y-1">
+<div class="relative aspect-[4/3] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stylish educational infographic about solar energy, featuring clean icons of the sun and panels in a modern vector style. The palette is dominated by solar gold and deep blues, with prominent Arabic headers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC8SA3HShss5nKEWOxm8aFtNk7JS_qJgM2G3ccNpIDDuIYJeLJKdTkktt7NFnDBDT_1_TI-oMjaez_ZIpSL9jzWzVjVtuo_exxtNSwhTuEHfGu3gEoBMcVdFNWsxYE51eC2bJLBRuA9G8uuSRzi0l-O6rlMqfbS1dcVmz0MU64bqhkDZnrJWsLf0Djf5KDdyoLU_ekhzmKUIO74iwnQbXFUgwlOlKXuoFnvT1bI-V6vlOH_BdBdmbct2HQFQ5_1XmX_lkE7cstAi4"/>
+<span class="absolute top-sm right-sm bg-secondary text-white text-[10px] font-bold px-md py-1 rounded-full uppercase">Canva</span>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-lg text-title-lg text-on-surface line-clamp-1">قالب عرض تقديمي - الطاقة</h3>
+<span class="material-symbols-outlined text-outline-variant hover:text-danger-red cursor-pointer">favorite</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">بواسطة: مدار ديزاين</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-warning-amber text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold">5.0</span>
+<span class="font-label-md text-label-md text-on-surface-variant">(85 تقييم)</span>
+</div>
+<div class="flex justify-between items-center pt-md border-t border-outline-variant/10">
+<span class="font-headline-md text-headline-md text-primary">30.00 ر.س</span>
+<button class="p-sm bg-secondary-container text-on-secondary-container rounded-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-2xl overflow-hidden group border border-outline-variant/30 hover:shadow-2xl transition-all hover:-translate-y-1">
+<div class="relative aspect-[4/3] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Mockup of a printed educational booklet on a light wood desk, focused on biology illustrations of plant cells. Professional lighting, vibrant green colors, and clean layout with Arabic descriptive text." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvDHWBnClv3nqiSTDans0R0lXb0fGfDChL0MvwC3978owkGYTTph3CX7xQ5oiwfab-5EUwQcWegsr95HGwIcGGUjcHPoTRWCCRk1-S29k_N9yRE4xeoU8Zab7PXir18N-fBy-vCJA0uWhqgu-UFY2-qCJU2wrfFL-Qvr3jgoz4BOKO9FUbD6gNZZBV8mtwygKUZo2JA-xZ3xZU9BmX-NqUMttK9_HY_LtaPz0amYmmaMCwH_Cr-Xs1HF9g7kMpKS-10itvqGoSRHg"/>
+<span class="absolute top-sm right-sm bg-primary text-white text-[10px] font-bold px-md py-1 rounded-full uppercase">PDF</span>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-lg text-title-lg text-on-surface line-clamp-1">ملخص الأحياء الشامل</h3>
+<span class="material-symbols-outlined text-outline-variant hover:text-danger-red cursor-pointer">favorite</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">بواسطة: د. خالد العمري</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-warning-amber text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold">4.9</span>
+<span class="font-label-md text-label-md text-on-surface-variant">(210 تقييم)</span>
+</div>
+<div class="flex justify-between items-center pt-md border-t border-outline-variant/10">
+<span class="font-headline-md text-headline-md text-primary">55.00 ر.س</span>
+<button class="p-sm bg-secondary-container text-on-secondary-container rounded-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white rounded-2xl overflow-hidden group border border-outline-variant/30 hover:shadow-2xl transition-all hover:-translate-y-1">
+<div class="relative aspect-[4/3] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Digital art representing a collection of school test papers with a red 'A+' grade, featuring 3D icons of clocks and pencils floating in a soft blue atmospheric space. Professional corporate educational vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgSTYfEzRsyeJKVScqjXX9N_6EFMeshcrAODhCZ1NCCKV8GVRMHS6v3TGHeniSjthQD2D_PfN1DVxOti-kcByAo0tqZNhR3lOIIa8-koOUrIvZy-E6AG_kpceY3YyejxUkuQ-ST9e0AObVP7j6XZ8NmShhC1G613dzuKvxM1U1Rdz_6CkUV6v0JuOAuCgyhKO7Pj7x5NyZyjbHwR5WCVOmE2zKjT-1_ejlNycRrLKlWNlG4j0nNYpDntwZgPQECn2Q4p8fydzKYMc"/>
+<span class="absolute top-sm right-sm bg-growth-green text-white text-[10px] font-bold px-md py-1 rounded-full uppercase">Excel</span>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-lg text-title-lg text-on-surface line-clamp-1">بنك الأسئلة - لغتي</h3>
+<span class="material-symbols-outlined text-outline-variant hover:text-danger-red cursor-pointer">favorite</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">بواسطة: إدارة مدار</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-warning-amber text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold">4.7</span>
+<span class="font-label-md text-label-md text-on-surface-variant">(64 تقييم)</span>
+</div>
+<div class="flex justify-between items-center pt-md border-t border-outline-variant/10">
+<span class="font-headline-md text-headline-md text-primary">70.00 ر.س</span>
+<button class="p-sm bg-secondary-container text-on-secondary-container rounded-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bundles Section -->
+<section class="py-3xl relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-lg">
+<div class="bg-white/90 backdrop-blur-md rounded-3xl p-xl md:p-3xl border border-white/50 shadow-2xl flex flex-col md:flex-row items-center gap-2xl">
+<div class="flex-1 space-y-xl text-center md:text-right">
+<span class="inline-block px-md py-xs bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md font-bold">وفر حتى 40%</span>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary">حزم المصادر المتكاملة</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">احصل على كل ما تحتاجه للفصل الدراسي بأكمله في ملف واحد موحد. خطط، أوراق عمل، واختبارات منسقة بعناية.</p>
+<div class="flex flex-col sm:flex-row gap-md justify-center md:justify-start">
+<button class="bg-primary text-white h-14 px-xl rounded-xl font-title-lg text-title-lg hover:bg-primary-container transition-all shadow-lg">تصفح الحزم</button>
+<button class="bg-white border-2 border-nebula-lavender text-nebula-lavender h-14 px-xl rounded-xl font-title-lg text-title-lg hover:bg-surface-variant transition-all">كيف تعمل الحزم؟</button>
+</div>
+</div>
+<div class="flex-1 w-full max-w-md">
+<div class="relative group">
+<div class="absolute -inset-4 bg-secondary/20 rounded-full blur-2xl group-hover:bg-secondary/40 transition-all"></div>
+<div class="relative bg-surface-container-lowest rounded-2xl p-md shadow-xl border border-outline-variant/30 rotate-3 group-hover:rotate-0 transition-transform">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg text-primary">حزمة معلم المرحلة الابتدائية</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">150+ ملف تعليمي</p>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between font-label-md text-label-md border-b pb-sm">
+<span>اختبارات</span>
+<span class="text-growth-green">مرفق ✅</span>
+</div>
+<div class="flex justify-between font-label-md text-label-md border-b pb-sm">
+<span>خطط دروس</span>
+<span class="text-growth-green">مرفق ✅</span>
+</div>
+<div class="flex justify-between font-label-md text-label-md">
+<span>عروض تقديمية</span>
+<span class="text-growth-green">مرفق ✅</span>
+</div>
+</div>
+<div class="mt-xl flex justify-between items-center">
+<div class="text-primary font-headline-md">199.00 ر.س <span class="text-label-md line-through text-outline">320 ر.س</span></div>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Seller CTA -->
+<section class="py-3xl max-w-container-max mx-auto px-lg">
+<div class="bg-primary rounded-[40px] p-xl md:p-3xl flex flex-col md:flex-row justify-between items-center gap-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="relative z-10 space-y-md text-center md:text-right">
+<h2 class="font-headline-lg text-headline-lg text-white">هل تملك مصادر تعليمية مميزة؟</h2>
+<p class="font-body-md text-body-md text-white/80 max-w-xl">انضم لآلاف المعلمين الذين يشاركون خبراتهم ويحققون عوائد إضافية. منصة مدار تضمن لك عملية بيع احترافية وحفظاً لحقوقك.</p>
+</div>
+<div class="relative z-10">
+<button class="bg-secondary-container text-on-secondary-container px-3xl h-16 rounded-2xl font-title-lg text-title-lg hover:scale-105 active:scale-95 transition-all shadow-xl">ابدأ البيع الآن</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-space-black text-surface-variant py-2xl px-lg">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-lg">
+<div class="flex flex-col items-center gap-sm">
+<span class="text-headline-md font-headline-md text-secondary-fixed">مدار التعليمية</span>
+<p class="font-body-md text-body-md text-center opacity-70">بوابتك لمستقبل تعليمي رقمي متطور وآمن.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-xl">
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">سياسة الخصوصية</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">شروط الاستخدام</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">طرق الدفع</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">الأسئلة الشائعة</a>
+</nav>
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all">
+<span class="material-symbols-outlined text-sm">share</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all">
+<span class="material-symbols-outlined text-sm">mail</span>
+</div>
+</div>
+<p class="font-label-md text-label-md opacity-50 mt-md">© 2024 متجر مدار التعليمي. جميع الحقوق محفوظة.</p>
+</div>
+</footer>
+<!-- SideNavBar (Cart Drawer - Hidden by default) -->
+<aside class="fixed inset-y-0 right-0 z-[60] w-80 bg-surface-container-lowest shadow-xl p-md translate-x-full transition-transform duration-300 flex flex-col" id="side-nav">
+<div class="flex justify-between items-center mb-xl">
+<h2 class="font-title-lg text-title-lg text-primary">سلة التسوق</h2>
+<button class="material-symbols-outlined text-on-surface-variant" onclick="toggleSideNav()">close</button>
+</div>
+<div class="flex-1 overflow-y-auto space-y-md">
+<p class="font-label-md text-label-md text-on-surface-variant text-center py-xl">السلة فارغة حالياً</p>
+<!-- Cart items would go here -->
+</div>
+<div class="pt-xl space-y-md border-t border-outline-variant/20">
+<div class="flex justify-between font-title-lg text-title-lg text-primary">
+<span>المجموع:</span>
+<span>0.00 ر.س</span>
+</div>
+<button class="w-full bg-primary text-white h-14 rounded-xl font-title-lg text-title-lg hover:bg-primary-container transition-all">إتمام عملية الشراء</button>
+<nav class="flex flex-col gap-sm pt-md">
+<a class="flex items-center gap-md p-md hover:bg-surface-variant rounded-lg text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">طلباتي</span>
+</a>
+<a class="flex items-center gap-md p-md hover:bg-surface-variant rounded-lg text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-md text-label-md">المفضلة</span>
+</a>
+<a class="flex items-center gap-md p-md hover:bg-surface-variant rounded-lg text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">الإعدادات</span>
+</a>
+</nav>
+</div>
+</aside>
+<script>
+        function toggleSideNav() {
+            const nav = document.getElementById('side-nav');
+            nav.classList.toggle('translate-x-full');
+        }
+
+        // Add event listener to cart icon in top bar
+        document.querySelector('.material-symbols-outlined').parentElement.addEventListener('click', (e) => {
+            if(e.target.textContent === 'shopping_cart') {
+                toggleSideNav();
+            }
+        });
+
+        // Simple parallax or hover effects can be added here
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for lightweight micro-interactions
+            });
+        });
+    </script>
+</body></html>

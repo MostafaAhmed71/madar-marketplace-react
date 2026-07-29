@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تم استلام طلبك بنجاح | متجر مدار</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #f8f9fb;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .success-check-animation {
+            animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e1e2e4",
+                    "secondary-fixed": "#ffdea6",
+                    "on-primary-fixed-variant": "#414176",
+                    "primary-fixed-dim": "#c2c1ff",
+                    "space-black": "#1F2937",
+                    "inverse-primary": "#c2c1ff",
+                    "background": "#f8f9fb",
+                    "primary": "#39396d",
+                    "on-surface-variant": "#47464f",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-tertiary-fixed": "#14124d",
+                    "surface-dim": "#d9dadc",
+                    "nebula-lavender": "#6B6BA8",
+                    "surface-container": "#edeef0",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#c7c5ff",
+                    "growth-green": "#22C55E",
+                    "primary-fixed": "#e2dfff",
+                    "on-tertiary-fixed-variant": "#40407a",
+                    "surface": "#f8f9fb",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary": "#7b5800",
+                    "secondary-fixed-dim": "#ffbb0c",
+                    "outline": "#777680",
+                    "on-surface": "#191c1e",
+                    "outline-variant": "#c8c5d0",
+                    "tertiary-fixed": "#e2dfff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#191c1e",
+                    "surface-bright": "#f8f9fb",
+                    "tertiary": "#383871",
+                    "surface-tint": "#595990",
+                    "secondary-container": "#f9b500",
+                    "on-secondary-container": "#684a00",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#505086",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#151448",
+                    "warning-amber": "#F59E0B",
+                    "tertiary-container": "#4f4f8a",
+                    "tertiary-fixed-dim": "#c2c1ff",
+                    "surface-container-highest": "#e1e2e4",
+                    "on-tertiary-container": "#c6c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e7e8ea",
+                    "inverse-surface": "#2e3132",
+                    "danger-red": "#EF4444",
+                    "on-secondary-fixed": "#271900",
+                    "surface-container-low": "#f3f4f6",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "sm": "8px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "2xl": "48px",
+                    "xs": "4px",
+                    "gutter": "20px",
+                    "3xl": "64px",
+                    "xl": "32px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["IBM Plex Sans Arabic"],
+                    "title-lg": ["IBM Plex Sans Arabic"],
+                    "display-lg": ["IBM Plex Sans Arabic"],
+                    "headline-md": ["IBM Plex Sans Arabic"],
+                    "body-lg": ["IBM Plex Sans Arabic"],
+                    "body-md": ["IBM Plex Sans Arabic"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<canvas class="confetti-canvas" id="confetti"></canvas>
+<!-- Content Wrapper -->
+<main class="min-h-screen flex flex-col items-center justify-center relative z-10 px-gutter">
+<!-- Background decorative element (Shaders/Animation placeholder would go here if provided) -->
+<div class="absolute inset-0 pointer-events-none opacity-20 overflow-hidden">
+<div class="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-nebula-lavender rounded-full blur-[100px]"></div>
+</div>
+<!-- Success Card -->
+<div class="glass-panel max-w-2xl w-full p-2xl md:p-3xl rounded-3xl shadow-xl flex flex-col items-center text-center">
+<!-- Icon Section -->
+<div class="w-32 h-32 md:w-40 md:h-40 bg-growth-green/10 rounded-full flex items-center justify-center mb-xl success-check-animation">
+<div class="w-24 h-24 md:w-32 md:h-32 bg-growth-green rounded-full flex items-center justify-center shadow-lg shadow-growth-green/30">
+<span class="material-symbols-outlined text-white text-[64px] md:text-[80px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+</div>
+<!-- Text Content -->
+<h1 class="font-headline-md text-headline-md text-primary mb-md">تم استلام طلبك بنجاح!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl leading-relaxed max-w-lg">
+                شكراً لثقتك بمتجر مدار التعليمي. فريقنا سيعمل الآن على مراجعة إيصال التحويل الخاص بك خلال <span class="font-bold text-primary">24 ساعة</span> بحد أقصى.
+            </p>
+<div class="bg-surface-container-low p-md rounded-xl flex items-start gap-md mb-2xl text-right w-full">
+<span class="material-symbols-outlined text-nebula-lavender mt-1">mail</span>
+<div class="flex flex-col">
+<span class="font-title-lg text-title-lg text-primary text-sm mb-1">ترقب بريدك الإلكتروني</span>
+<p class="font-label-md text-label-md text-on-surface-variant">سيتم إرسال إشعار فور تفعيل طلبك لتتمكن من الوصول لمنتجاتك.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col md:flex-row gap-md w-full">
+<a class="flex-1 bg-primary text-on-primary font-title-lg text-title-lg py-md px-xl rounded-xl hover:bg-primary-container transition-all text-center flex items-center justify-center gap-base active:scale-95" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                    طلباتي
+                </a>
+<a class="flex-1 bg-transparent border-2 border-outline-variant text-primary font-title-lg text-title-lg py-md px-xl rounded-xl hover:bg-surface-variant transition-all text-center flex items-center justify-center gap-base active:scale-95" href="#">
+<span class="material-symbols-outlined">home</span>
+                    الرئيسية
+                </a>
+</div>
+<!-- Subtle Security Badge -->
+<div class="mt-2xl pt-xl border-t border-outline-variant/30 w-full flex items-center justify-center gap-sm opacity-60">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="font-label-md text-label-md">دفع آمن ومعالجة مشفرة</span>
+</div>
+</div>
+<!-- Support Link -->
+<p class="mt-xl font-label-md text-label-md text-on-surface-variant">
+            هل لديك أي استفسار؟ <a class="text-primary underline font-bold" href="#">تواصل مع الدعم الفني</a>
+</p>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="w-full py-2xl px-lg flex flex-col items-center gap-lg bg-space-black text-tertiary-fixed mt-auto relative z-10">
+<div class="text-headline-md font-headline-md text-secondary-fixed">متجر مدار</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="font-body-md text-body-md text-surface-variant hover:text-white transition-colors" href="#">سياسة الخصوصية</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-white transition-colors" href="#">شروط الاستخدام</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-white transition-colors" href="#">طرق الدفع</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-white transition-colors" href="#">الأسئلة الشائعة</a>
+</div>
+<p class="font-label-md text-label-md text-surface-variant opacity-80">© 2024 متجر مدار التعليمي. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+        // Simple micro-interaction for confetti effect on load
+        function createConfetti() {
+            const canvas = document.getElementById('confetti');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let particles = [];
+            const colors = ['#39396d', '#6B6BA8', '#22C55E', '#F59E0B', '#ffdea6'];
+
+            for (let i = 0; i < 100; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 3 + 2,
+                    angle: Math.random() * 6.28
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach((p, i) => {
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, 6.28);
+                    ctx.fill();
+
+                    p.y += p.speed;
+                    p.x += Math.sin(p.angle) * 2;
+                    
+                    if (p.y > canvas.height) {
+                        particles[i].y = -20;
+                        particles[i].x = Math.random() * canvas.width;
+                    }
+                });
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+
+            // Stop confetti after 4 seconds to keep UI clean
+            setTimeout(() => {
+                const fadeOut = setInterval(() => {
+                    canvas.style.opacity = parseFloat(canvas.style.opacity || 1) - 0.05;
+                    if (canvas.style.opacity <= 0) {
+                        clearInterval(fadeOut);
+                        canvas.style.display = 'none';
+                    }
+                }, 50);
+            }, 3000);
+        }
+
+        window.onload = createConfetti;
+    </script>
+</body></html>

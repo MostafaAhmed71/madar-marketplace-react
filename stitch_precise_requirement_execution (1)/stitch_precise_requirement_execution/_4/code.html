@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إتمام الشراء - متجر مدار</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-variant": "#e1e2e4",
+                "secondary-fixed": "#ffdea6",
+                "on-primary-fixed-variant": "#414176",
+                "primary-fixed-dim": "#c2c1ff",
+                "space-black": "#1F2937",
+                "inverse-primary": "#c2c1ff",
+                "background": "#f8f9fb",
+                "primary": "#39396d",
+                "on-surface-variant": "#47464f",
+                "inverse-on-surface": "#f0f1f3",
+                "on-tertiary-fixed": "#14124d",
+                "surface-dim": "#d9dadc",
+                "nebula-lavender": "#6B6BA8",
+                "surface-container": "#edeef0",
+                "on-secondary-fixed-variant": "#5d4200",
+                "error-container": "#ffdad6",
+                "on-primary-container": "#c7c5ff",
+                "growth-green": "#22C55E",
+                "primary-fixed": "#e2dfff",
+                "on-tertiary-fixed-variant": "#40407a",
+                "surface": "#f8f9fb",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "secondary": "#7b5800",
+                "secondary-fixed-dim": "#ffbb0c",
+                "outline": "#777680",
+                "on-surface": "#191c1e",
+                "outline-variant": "#c8c5d0",
+                "tertiary-fixed": "#e2dfff",
+                "on-secondary": "#ffffff",
+                "on-background": "#191c1e",
+                "surface-bright": "#f8f9fb",
+                "tertiary": "#383871",
+                "surface-tint": "#595990",
+                "secondary-container": "#f9b500",
+                "on-secondary-container": "#684a00",
+                "on-primary": "#ffffff",
+                "primary-container": "#505086",
+                "on-error-container": "#93000a",
+                "on-primary-fixed": "#151448",
+                "warning-amber": "#F59E0B",
+                "tertiary-container": "#4f4f8a",
+                "tertiary-fixed-dim": "#c2c1ff",
+                "surface-container-highest": "#e1e2e4",
+                "on-tertiary-container": "#c6c5ff",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-high": "#e7e8ea",
+                "inverse-surface": "#2e3132",
+                "danger-red": "#EF4444",
+                "on-secondary-fixed": "#271900",
+                "surface-container-low": "#f3f4f6",
+                "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "container-max": "1280px",
+                "sm": "8px",
+                "base": "4px",
+                "lg": "24px",
+                "2xl": "48px",
+                "xs": "4px",
+                "gutter": "20px",
+                "3xl": "64px",
+                "xl": "32px",
+                "md": "16px"
+            },
+            "fontFamily": {
+                "label-md": ["IBM Plex Sans Arabic"],
+                "title-lg": ["IBM Plex Sans Arabic"],
+                "display-lg": ["IBM Plex Sans Arabic"],
+                "headline-md": ["IBM Plex Sans Arabic"],
+                "body-lg": ["IBM Plex Sans Arabic"],
+                "headline-lg": ["IBM Plex Sans Arabic"],
+                "body-md": ["IBM Plex Sans Arabic"]
+            },
+            "fontSize": {
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fb;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(225, 226, 228, 0.5);
+        }
+        .step-active { color: #39396d; }
+        .step-inactive { color: #777680; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-md">
+<span class="text-headline-md font-headline-md font-bold text-primary">متجر مدار</span>
+<div class="hidden md:flex gap-lg mr-xl">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#">الرئيسية</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-container transition-colors" href="#">المصادر</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-container transition-colors" href="#">العروض</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-container transition-colors" href="#">من نحن</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-base hover:bg-surface-variant rounded-full transition-all">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</button>
+<button class="p-base hover:bg-surface-variant rounded-full transition-all">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+<!-- Progress Steps -->
+<div class="flex items-center justify-center mb-2xl">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+<span class="font-label-md text-label-md text-primary">ملخص الطلب</span>
+</div>
+<div class="w-16 h-0.5 bg-outline-variant mx-md"></div>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
+<span class="font-label-md text-label-md text-primary">الدفع والتحويل</span>
+</div>
+<div class="w-16 h-0.5 bg-outline-variant mx-md"></div>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container text-outline flex items-center justify-center font-bold">3</div>
+<span class="font-label-md text-label-md text-outline">تأكيد الطلب</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Right Column: Bank Details & Action -->
+<div class="lg:col-span-7 space-y-lg">
+<section class="bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-surface-variant">
+<h2 class="font-headline-md text-headline-md text-primary mb-lg flex items-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                        بيانات التحويل البنكي
+                    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl leading-relaxed">
+                        لإتمام طلبك، يرجى تحويل المبلغ الإجمالي إلى الحساب البنكي التالي، ثم رفع صورة إيصال التحويل للتأكيد.
+                    </p>
+<div class="space-y-md">
+<!-- Al Rajhi Bank Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 w-2 h-full bg-secondary"></div>
+<div class="flex flex-col md:flex-row justify-between gap-md">
+<div class="space-y-sm">
+<span class="font-label-md text-label-md text-secondary">مصرف الراجحي</span>
+<div class="flex items-center gap-sm">
+<span class="font-title-lg text-title-lg text-primary">متجر مدار التعليمي</span>
+<span class="material-symbols-outlined text-outline text-body-md cursor-pointer hover:text-primary transition-colors" onclick="copyText('متجر مدار التعليمي')">content_copy</span>
+</div>
+<div class="mt-md">
+<p class="font-label-md text-label-md text-on-surface-variant">رقم الآيبان (IBAN)</p>
+<div class="flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded mt-xs">
+<span class="font-code-sm text-on-surface tracking-wider">SA12 8000 0000 1234 5678 9012</span>
+<button class="material-symbols-outlined text-primary text-body-md hover:scale-110 transition-transform" onclick="copyText('SA1280000000123456789012')">content_copy</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center md:justify-end">
+<div class="w-24 h-24 bg-white p-sm rounded-lg border border-surface-variant shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-contain" data-alt="A professional high-resolution corporate QR code for banking transfers, minimalist style, with subtle Orbit Purple accents, presented in a clean white frame against a soft gray background, emphasizing security and modern finance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwO1IiGwEr3IGFnASRheAgPdddoRVtRCkB5uIX__eViEhbRZoMb5luTGp1ncd8wprQd0kaC9mDl9dbOljXlURhTp65T1735UJ8C5aPyNhIcqTzYt70DiVUfTprDzZh844Rhs91PF_8M1zPXsl7N2p_TZiXgqzpKJT5VFxPGWpoCSsZ8ag0ZhSRR_zSPlROq7n_Jzhb-e7GaQ8spGmB7K-NeI-fPZ8Epv4JQWipmDMC9IRr4hl5Q6zzocy8hon7cMA3WM1NBu1YxaU"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-surface-variant">
+<h3 class="font-title-lg text-title-lg text-primary mb-md">تأكيد العملية</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">بعد إجراء التحويل، يرجى النقر على الزر أدناه لرفع إيصال الدفع والانتقال لمرحلة التحقق.</p>
+<button class="w-full bg-secondary-container text-on-secondary-container py-lg rounded-xl font-title-lg text-title-lg flex items-center justify-center gap-md shadow-lg hover:bg-secondary-fixed transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+                        تم التحويل، رفع الإيصال
+                    </button>
+<div class="mt-lg flex items-center gap-sm justify-center text-growth-green">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-label-md text-label-md">دفع آمن ومشفر 100%</span>
+</div>
+</section>
+</div>
+<!-- Left Column: Order Summary -->
+<div class="lg:col-span-5">
+<aside class="sticky top-[100px] bg-surface-container-low p-xl rounded-xl border border-surface-variant">
+<h2 class="font-title-lg text-title-lg text-primary mb-xl">ملخص الطلب</h2>
+<div class="space-y-lg mb-xl">
+<!-- Product 1 -->
+<div class="flex gap-md">
+<div class="w-20 h-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A premium educational digital product cover showing a vibrant celestial galaxy themed template for Canva, with glowing purple and blue nebula clouds, professional typography 'Celestial Learning Pack', high quality 3D render style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv6hvTFGtxb1v725XtKnjxlJj1VOiv9BEgK5cW_iu9nbWAQkX0uSEWLlw3GkmoCSOdtGDBndEjGAKW4FX_0HH5bsEL-la4f3Sk_5YvmYw48ynssBONMdgfh8rIaPgnKxOklPMsI33gmXIzxRfwNSc1ecp279BeACFZYdrNxuLH97rM2kPcHcTgf9kV62KeSGl38HkkTXCegkMdaBIwXrc_uQpW5ek1HNEbh_QaXvWSS4WSovZPl4szXTu9JTroAGTaBdTBXCt88pc"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-label-md text-primary mb-base line-clamp-1">حزمة قوالب "مدار" لكانفا - المستوى المتقدم</h4>
+<p class="text-xs text-on-surface-variant bg-surface-variant inline-block px-2 py-0.5 rounded">قالب Canva</p>
+<div class="flex justify-between items-center mt-sm">
+<span class="font-label-md text-label-md text-primary">150.00 ر.س</span>
+<span class="text-xs text-outline">الكمية: 1</span>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex gap-md">
+<div class="w-20 h-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean professional PDF document cover with minimalist cosmic illustrations, featuring scientific geometric icons and clear Arabic titling 'The Teacher Guide', soft lighting, high key photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP2mJmGNuCFGgKoqLDSlywkOPRCPsu2EwhTXCW4eKJcaXa7ojP5I7yE45aXMw-IEIE_C-_u7uzz6_NSe0uw92F6hLgDJrII6vkckvxp5dFPwvqFWmBp0-6RKZE9j3Kjw4VW4eBt3tp-jr-aqwxXuaUbOWFzlOmiQijkr1jtNQGgik2vRVXYxRltCGqMaaVIvud_93orC6IGyiYg2iKVkr0Pl_kSZ_Eof1rUTitb3BRf7X7y8wGUOGPPEuZljcZmj9yXK2MuamoZPY"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-label-md text-primary mb-base line-clamp-1">دليل المعلم الشامل للتحول الرقمي</h4>
+<p class="text-xs text-on-surface-variant bg-surface-variant inline-block px-2 py-0.5 rounded">ملف PDF</p>
+<div class="flex justify-between items-center mt-sm">
+<span class="font-label-md text-label-md text-primary">85.00 ر.س</span>
+<span class="text-xs text-outline">الكمية: 1</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-lg space-y-md">
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">المجموع الفرعي</span>
+<span class="font-body-md text-body-md text-primary">235.00 ر.س</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">ضريبة القيمة المضافة (15%)</span>
+<span class="font-body-md text-body-md text-primary">35.25 ر.س</span>
+</div>
+<div class="flex justify-between pt-md border-t border-outline-variant">
+<span class="font-title-lg text-title-lg text-primary">الإجمالي النهائي</span>
+<div class="text-left">
+<span class="font-headline-md text-headline-md text-secondary">270.25 ر.س</span>
+<p class="text-[10px] text-outline text-left">شامل الضريبة</p>
+</div>
+</div>
+</div>
+<div class="mt-xl p-md bg-white rounded-lg border border-warning-amber/20 flex gap-sm">
+<span class="material-symbols-outlined text-warning-amber">info</span>
+<p class="text-xs text-on-surface-variant leading-tight">
+                            يرجى التأكد من كتابة "رقم الطلب #8273" في ملاحظات التحويل لسرعة عملية التأكيد.
+                        </p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-space-black text-white mt-3xl">
+<div class="w-full py-2xl px-lg flex flex-col items-center gap-lg max-w-container-max mx-auto">
+<span class="text-headline-md font-headline-md text-secondary-fixed">متجر مدار</span>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">سياسة الخصوصية</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">شروط الاستخدام</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">طرق الدفع</a>
+<a class="font-label-md text-label-md text-surface-variant hover:text-white transition-colors" href="#">الأسئلة الشائعة</a>
+</div>
+<p class="font-label-md text-label-md text-surface-variant opacity-90 mt-md">© 2024 متجر مدار التعليمي. جميع الحقوق محفوظة.</p>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('تم نسخ النص: ' + text);
+            });
+        }
+
+        // Simple animation on scroll reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section, aside');
+            sections.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = `all 0.6s ease-out ${index * 0.15}s`;
+                
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+</body></html>

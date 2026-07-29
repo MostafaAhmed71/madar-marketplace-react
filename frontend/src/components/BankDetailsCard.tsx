@@ -16,17 +16,25 @@ export function BankDetailsCard({ bank, amount }: BankDetailsCardProps) {
   }
 
   return (
-    <div className="bg-zinc-900 text-white rounded-2xl p-6 sm:p-8">
-      <h2 className="text-lg font-bold mb-6 flex items-center gap-2">
-        <Building2 className="w-5 h-5 text-solar-gold" strokeWidth={1.75} />
+    <div
+      className="bg-white rounded-3xl p-6 sm:p-8 border-r-4 shadow-xl shadow-[#39396d]/5"
+      style={{
+        borderRightColor: '#f9b500',
+        borderWidth: '1px',
+        borderRightWidth: '5px',
+        borderColor: 'rgba(200,197,208,0.30)',
+      }}
+    >
+      <h2 className="text-lg font-bold mb-6 flex items-center gap-2 text-[#39396d]" style={{ fontFamily: 'IBM Plex Sans Arabic' }}>
+        <Building2 className="w-5 h-5 text-[#f9b500]" strokeWidth={1.75} />
         بيانات التحويل البنكي
       </h2>
 
-      <div className="space-y-4 text-sm">
-        <Row label="البنك" value={bank.bank_name} />
+      <div className="space-y-5 text-sm">
+        <Row label="مصرف" value={bank.bank_name} />
         <Row label="اسم الحساب" value={bank.account_name} />
         <Row
-          label="الآيبان"
+          label="رقم الآيبان (IBAN)"
           value={bank.iban}
           mono
           highlight
@@ -42,13 +50,15 @@ export function BankDetailsCard({ bank, amount }: BankDetailsCardProps) {
         )}
       </div>
 
-      <div className="mt-8 pt-6 border-t border-white/10">
-        <p className="text-zinc-400 text-sm mb-1">المبلغ المطلوب تحويله</p>
-        <p className="text-3xl font-bold text-solar-gold">{amount.toFixed(2)} <span className="text-lg font-normal text-zinc-400">ر.س</span></p>
+      <div className="mt-8 pt-6 border-t border-[#edeef0]">
+        <p className="text-[#777680] text-xs mb-1">المبلغ المطلوب تحويله</p>
+        <p className="text-2xl font-black text-[#39396d]">
+          {amount.toFixed(2)} <span className="text-sm font-semibold text-[#777680]">ر.س</span>
+        </p>
       </div>
 
-      <p className="mt-4 text-xs text-zinc-500 leading-relaxed">
-        حوّل المبلغ من تطبيق البنك ثم اضغط الزر أدناه لرفع إيصال التحويل
+      <p className="mt-4 text-xs text-[#777680] leading-relaxed">
+        يرجى تحويل المبلغ بدقة إلى الحساب المذكور أعلاه من تطبيق البنك الخاص بك، ثم الضغط على الزر أدناه لتأكيد عملية التحويل ورفع الإيصال.
       </p>
     </div>
   )
@@ -69,16 +79,19 @@ function Row({
 }) {
   return (
     <div className="flex justify-between items-center gap-3">
-      <span className="text-zinc-400 shrink-0">{label}</span>
+      <span className="text-[#777680] text-xs shrink-0">{label}</span>
       <div className="flex items-center gap-2 min-w-0">
-        <span className={`font-semibold truncate ${mono ? 'font-mono' : ''} ${highlight ? 'text-solar-gold' : ''}`}>
+        <span
+          className={`font-semibold text-sm truncate ${mono ? 'font-mono tracking-wider' : ''}`}
+          style={{ color: highlight ? '#39396d' : '#191c1e' }}
+        >
           {value}
         </span>
         {onCopy && (
           <button
             type="button"
             onClick={onCopy}
-            className="shrink-0 p-1.5 rounded-md bg-white/10 hover:bg-white/20 transition-colors"
+            className="shrink-0 p-1.5 rounded-lg bg-[#f3f4f6] hover:bg-[#edeef0] text-[#39396d] transition-colors"
             aria-label={`نسخ ${label}`}
           >
             <Copy className="w-3.5 h-3.5" />

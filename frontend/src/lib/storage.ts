@@ -49,7 +49,10 @@ export async function getDownloadUrl(storageKey: string): Promise<string> {
     body: JSON.stringify({ key: storageKey }),
   })
 
-  if (!res.ok) throw new Error('غير مصرح بتحميل هذا الملف')
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}))
+    throw new Error(err.message ?? 'غير مصرح بتحميل هذا الملف')
+  }
   const data = await res.json()
   return data.url
 }

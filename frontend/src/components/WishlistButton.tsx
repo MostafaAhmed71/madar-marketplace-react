@@ -8,9 +8,10 @@ import { cn } from '../lib/cn'
 interface WishlistButtonProps {
   productId: string
   size?: 'sm' | 'md'
+  className?: string
 }
 
-export function WishlistButton({ productId, size = 'md' }: WishlistButtonProps) {
+export function WishlistButton({ productId, size = 'md', className }: WishlistButtonProps) {
   const { user } = useAuth()
   const navigate = useNavigate()
   const [active, setActive] = useState(false)
@@ -46,7 +47,8 @@ export function WishlistButton({ productId, size = 'md' }: WishlistButtonProps) 
       className={cn(
         'flex items-center justify-center rounded-lg bg-white shadow-sm border border-zinc-200',
         'hover:border-zinc-300 transition-all disabled:opacity-50',
-        size === 'sm' ? 'w-9 h-9' : 'w-10 h-10'
+        size === 'sm' ? 'w-9 h-9' : 'w-10 h-10',
+        className
       )}
     >
       <Heart

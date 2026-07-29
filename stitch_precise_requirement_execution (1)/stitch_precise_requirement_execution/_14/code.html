@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Celestial Admin - إحصائيات المبيعات</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-low": "#f3f4f6",
+                "secondary-fixed-dim": "#ffbb0c",
+                "secondary": "#7b5800",
+                "on-primary-container": "#c7c5ff",
+                "on-secondary-container": "#684a00",
+                "on-tertiary": "#ffffff",
+                "primary": "#39396d",
+                "on-background": "#191c1e",
+                "on-surface": "#191c1e",
+                "background": "#f8f9fb",
+                "surface-container-high": "#e7e8ea",
+                "on-primary-fixed": "#151448",
+                "on-secondary-fixed": "#271900",
+                "space-black": "#1F2937",
+                "on-primary": "#ffffff",
+                "on-tertiary-fixed-variant": "#40407a",
+                "surface-tint": "#595990",
+                "secondary-container": "#f9b500",
+                "tertiary": "#383871",
+                "on-primary-fixed-variant": "#414176",
+                "primary-fixed-dim": "#c2c1ff",
+                "outline-variant": "#c8c5d0",
+                "inverse-surface": "#2e3132",
+                "on-tertiary-fixed": "#14124d",
+                "surface-container-highest": "#e1e2e4",
+                "surface-bright": "#f8f9fb",
+                "surface-container": "#edeef0",
+                "warning-amber": "#F59E0B",
+                "tertiary-fixed-dim": "#c2c1ff",
+                "error-container": "#ffdad6",
+                "surface": "#f8f9fb",
+                "on-secondary-fixed-variant": "#5d4200",
+                "on-secondary": "#ffffff",
+                "on-tertiary-container": "#c6c5ff",
+                "surface-container-lowest": "#ffffff",
+                "surface-dim": "#d9dadc",
+                "danger-red": "#EF4444",
+                "primary-container": "#505086",
+                "nebula-lavender": "#6B6BA8",
+                "error": "#ba1a1a",
+                "surface-variant": "#e1e2e4",
+                "secondary-fixed": "#ffdea6",
+                "tertiary-container": "#4f4f8a",
+                "primary-fixed": "#e2dfff",
+                "on-surface-variant": "#47464f",
+                "growth-green": "#22C55E",
+                "inverse-primary": "#c2c1ff",
+                "tertiary-fixed": "#e2dfff",
+                "on-error-container": "#93000a",
+                "outline": "#777680",
+                "on-error": "#ffffff",
+                "inverse-on-surface": "#f0f1f3"
+            },
+            "fontFamily": {
+                "headline-md": ["IBM Plex Sans Arabic"],
+                "headline-lg": ["IBM Plex Sans Arabic"],
+                "body-lg": ["IBM Plex Sans Arabic"],
+                "body-md": ["IBM Plex Sans Arabic"],
+                "label-md": ["IBM Plex Sans Arabic"],
+                "title-lg": ["IBM Plex Sans Arabic"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: var(--background);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(57, 57, 109, 0.1) 0%, rgba(57, 57, 109, 0) 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c8c5d0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #39396d;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full border-l border-outline-variant dark:border-outline-variant bg-surface-container-low dark:bg-surface-dim h-screen w-64 fixed right-0 top-0 z-50 shadow-sm">
+<div class="p-lg">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Celestial Admin</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Marketplace Control</p>
+</div>
+<nav class="flex-1 px-md space-y-2 mt-lg">
+<!-- Active Tab: Overview (since it's a dashboard) -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed-dim font-bold bg-surface-container-highest dark:bg-surface-container-high rounded-lg transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+<span class="font-body-md text-body-md">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-body-md text-body-md">Coupons</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<div class="p-lg mt-auto border-t border-outline-variant flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Professional studio portrait of a business administrator wearing a sleek dark suit, looking confident against a soft-focus office background with celestial-inspired purple lighting accents. High-quality corporate photography, sharp focus, 8k resolution, modern professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQpcFhJcHZrATyY6FMYaobB_-N-ODxNFsm-Gu3eFuqde-l7F9xPCg-UklRniL3z-KgzBKoNb5Z5WyahWpiZed8ZWuw24TqKQMvWRUodvDzU6eeuK3RFNSlAWsnSyhNcCd8c90_pJ29U30ngJJz2OPsZmDiWsUv4aVLL61GjXfEX3BZZKh0aj9GJJNp466ZkVBPO9SPFPyjG1LX5EE89uyS0r1Z6NvYMD3El6If5on5dFEIr4EwDOuObYuZl5uOqtZdEX8upd2F9XM"/>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold">Admin User</p>
+<p class="text-[12px] text-on-surface-variant">Administrator</p>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-lg mr-64 w-[calc(100%-16rem)] z-40 full-width h-16 sticky top-0 bg-surface dark:bg-surface-dim shadow-sm">
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pr-10 pl-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-md focus:ring-2 focus:ring-primary focus:outline-none w-64" placeholder="بحث عن منتجات أو طلبات..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-shadow duration-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-shadow duration-300">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A small circular profile icon for a digital dashboard showing a stylized, elegant avatar of a professional administrator, clean lines, professional atmosphere, set against a dark celestial purple background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJVD5jV4Oi4JBHEpq65WXrCvuwZZwukNfhoeJXvopk2Qb_BGPlpak83M-M1qhBec3UY5eTS7lEe4DONNCNvXzLGZlziRiwdU9MX1nTNhpo5bc30PX9OFUPU4rPHx8kxgrBqYxCIeaeBIbwssIkZpNP8xHeCVjQYlJrbVyOWpzZ1q11ulxa_xUoptYeUUfkCYXotynN9fFYdGbG6Iw5e99spqZxtWd0tqUU0Rm8fuz5Jc8NNR1kaSIGgYZMnkuw1yOH0u0tqINeJ_M"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="mr-64 p-lg">
+<!-- Header & Filter -->
+<div class="flex justify-between items-center mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">إحصائيات المبيعات</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">مرحباً بك في لوحة تحكم الأداء لـ Celestial Marketplace</p>
+</div>
+<div class="flex items-center gap-md bg-surface-container-lowest p-2 rounded-xl shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<select class="bg-transparent border-none focus:ring-0 font-label-md text-label-md cursor-pointer">
+<option>آخر 30 يوم</option>
+<option>آخر 7 أيام</option>
+<option>هذا الشهر</option>
+<option>الربع السنوي الحالي</option>
+</select>
+</div>
+</div>
+<!-- Analytics Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg mb-xl">
+<!-- Total Sales -->
+<div class="bg-surface-container-lowest p-lg rounded-2xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="p-2 bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<span class="text-growth-green font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> 12%
+                    </span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-xs">إجمالي المبيعات</p>
+<h3 class="font-headline-md text-headline-md text-primary">42,500 ريال</h3>
+<div class="mt-md h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[75%]"></div>
+</div>
+</div>
+<!-- Total Orders -->
+<div class="bg-surface-container-lowest p-lg rounded-2xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="p-2 bg-secondary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">shopping_bag</span>
+</div>
+<span class="text-growth-green font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> 8%
+                    </span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-xs">إجمالي الطلبات</p>
+<h3 class="font-headline-md text-headline-md text-primary">1,240</h3>
+<div class="mt-md h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[60%]"></div>
+</div>
+</div>
+<!-- Average Order Value -->
+<div class="bg-surface-container-lowest p-lg rounded-2xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="p-2 bg-tertiary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">analytics</span>
+</div>
+<span class="text-danger-red font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span> 3%
+                    </span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-xs">متوسط قيمة الطلب</p>
+<h3 class="font-headline-md text-headline-md text-primary">34 ريال</h3>
+<div class="mt-md h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[45%]"></div>
+</div>
+</div>
+<!-- New Customers -->
+<div class="bg-surface-container-lowest p-lg rounded-2xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="p-2 bg-growth-green/10 rounded-lg">
+<span class="material-symbols-outlined text-growth-green">person_add</span>
+</div>
+<span class="text-growth-green font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> 24%
+                    </span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-xs">عملاء جدد</p>
+<h3 class="font-headline-md text-headline-md text-primary">312</h3>
+<div class="mt-md h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-growth-green w-[85%]"></div>
+</div>
+</div>
+</div>
+<!-- Charts Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg mb-xl">
+<!-- Line Chart: Sales Trends -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-lg rounded-2xl shadow-sm border border-outline-variant h-[400px] flex flex-col">
+<div class="flex justify-between items-center mb-lg">
+<h4 class="font-title-lg text-title-lg text-primary">اتجاه المبيعات (30 يوم)</h4>
+<button class="material-symbols-outlined text-on-surface-variant">more_vert</button>
+</div>
+<div class="flex-1 relative chart-gradient rounded-xl border border-outline-variant/30 overflow-hidden flex items-end px-4 pb-4">
+<!-- Simple SVG representation of a line chart -->
+<svg class="w-full h-full overflow-visible" viewbox="0 0 800 200">
+<path d="M0,180 Q100,160 200,100 T400,120 T600,60 T800,40" fill="none" stroke="#39396d" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,180 Q100,160 200,100 T400,120 T600,60 T800,40 V200 H0 Z" fill="url(#grad1)" opacity="0.2"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#39396d;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#39396d;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#c8c5d0" stroke-dasharray="4" x1="0" x2="800" y1="200" y2="200"></line>
+<line opacity="0.3" stroke="#c8c5d0" stroke-dasharray="4" x1="0" x2="800" y1="150" y2="150"></line>
+<line opacity="0.3" stroke="#c8c5d0" stroke-dasharray="4" x1="0" x2="800" y1="100" y2="100"></line>
+<line opacity="0.3" stroke="#c8c5d0" stroke-dasharray="4" x1="0" x2="800" y1="50" y2="50"></line>
+</svg>
+<!-- Floating tooltip interaction example -->
+<div class="absolute left-[70%] bottom-[75%] bg-primary text-white text-[12px] px-2 py-1 rounded shadow-lg transform -translate-x-1/2">
+                        +2,450 ريال
+                    </div>
+</div>
+</div>
+<!-- Doughnut Chart: Sales by Category -->
+<div class="bg-surface-container-lowest p-lg rounded-2xl shadow-sm border border-outline-variant h-[400px] flex flex-col">
+<h4 class="font-title-lg text-title-lg text-primary mb-lg">المبيعات حسب الفئة</h4>
+<div class="flex-1 flex flex-col items-center justify-center">
+<div class="relative w-48 h-48 mb-lg">
+<!-- Custom CSS pie chart -->
+<div class="absolute inset-0 rounded-full border-[18px] border-primary" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 50% 100%);"></div>
+<div class="absolute inset-0 rounded-full border-[18px] border-secondary" style="clip-path: polygon(50% 50%, 50% 100%, 0% 100%, 0% 40%);"></div>
+<div class="absolute inset-0 rounded-full border-[18px] border-nebula-lavender" style="clip-path: polygon(50% 50%, 0% 40%, 0% 0%, 50% 0%);"></div>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="font-headline-md text-headline-md text-primary">85%</span>
+<span class="text-[12px] text-on-surface-variant">النمو الإجمالي</span>
+</div>
+</div>
+<div class="w-full space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md">الاختبارات</span>
+</div>
+<span class="font-label-md font-bold">45%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md">خطط الدروس</span>
+</div>
+<span class="font-label-md font-bold">35%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-nebula-lavender"></span>
+<span class="font-label-md text-label-md">الباقات</span>
+</div>
+<span class="font-label-md font-bold">20%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Table: Best Selling Products -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant overflow-hidden">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center">
+<h4 class="font-title-lg text-title-lg text-primary">أفضل المنتجات مبيعاً</h4>
+<button class="text-primary font-label-md hover:underline">عرض الكل</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-lg py-md font-label-md text-on-surface-variant">المنتج</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant">الفئة</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant">المبيعات</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant">الإيرادات</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant">الحالة</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Product 1 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="Educational book cover design for Advanced Mathematics, featuring a modern celestial aesthetic with nebula-themed background and clear professional Arabic typography. Premium pedagogical resource style, soft lighting, sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMiPNedFSsICLuA65n6-VpmEOG0ZGw5iQ-GY4FJyaRBXgaJILYt1pxIpRxfaT5yLZ0Cw0G8SZOGyVOaDC6Wb-D_p-jxFtdp2apaKsbYMbjnfjeKc7udMkXDJNIXZeWkKyi94Oy0uSYmhAWl-HS1kK6vYO7D2jEh-fCwseuY0ynQ_ubxHgjIWu4Pvteib0xDP0_HWAoyxPV1SEVvhh-_srn5c3oTI_zTx9gcDi9Rj_lugeH4IE-btbQmMJKVzeL4TIVlePESGYaIhI"/>
+</div>
+<span class="font-body-md text-body-md font-medium">مذكرة الرياضيات المتقدمة - الفصل الأول</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 bg-primary-container/10 text-primary rounded-full font-label-md text-sm">خطط دروس</span>
+</td>
+<td class="px-lg py-md font-body-md">452</td>
+<td class="px-lg py-md font-body-md font-bold text-primary">12,650 ريال</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 bg-growth-green/10 text-growth-green rounded-full font-label-md text-sm flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-growth-green"></span>
+                                    رائج
+                                </span>
+</td>
+</tr>
+<!-- Product 2 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="A bundle of colorful educational cards for children, featuring science illustrations of planets and atoms, elegant design, professional school material aesthetic, vibrant secondary-fixed colors, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW29q_R3_8bCg7l15RMQyTUHZwHeL-wbrtLjNAMolsamg0btXr_AbCmQq4ClWgA8WjnVc2kDc27y4VxroWenSb5vd83orZXSIHwCwjBrGem9-kDLEB_3LizAEEDweSSHkbaOQyzM6jjsQy1XCX_W5IaN7zK9ifVeppjokV_QUn0DVO3UE9Br16sHE5g5u6tpOZO5oVxykS6SBqHvz6iGYiHT50UEP2YyJH32bHVpXaQlXujDVauCId4-hAMNFCPhvwPurCiq4cqi4"/>
+</div>
+<span class="font-body-md text-body-md font-medium">باقة العلوم المتكاملة - المرحلة المتوسطة</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 bg-secondary-container/10 text-secondary rounded-full font-label-md text-sm">باقات</span>
+</td>
+<td class="px-lg py-md font-body-md">289</td>
+<td class="px-lg py-md font-body-md font-bold text-primary">8,450 ريال</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 bg-growth-green/10 text-growth-green rounded-full font-label-md text-sm flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-growth-green"></span>
+                                    مستقر
+                                </span>
+</td>
+</tr>
+<!-- Product 3 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist PDF document icon with a gold seal, representing a professional Arabic language examination paper. High-end graphic design, pedagogical luxury, soft shadows on a white surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNKZonZ05dfY3GgaD7uvkY_wck27YeeyVvIjhsHGYO8Xf_OnxJBa_oVQlYlyPEpsWssr9XMaViEDHmf3Sz6IfWSdQORNBez-hm_sakJInzwUhz6VyTCRQJshI9Jw6w_5ut3S7P6hKzs9dm9z5eykqQ1dRtZTAz7WCxiEThBrHrNVRvGijXNjXoTIJ7KR5rTMfMbe-62aT7U6fUI65LYjGULE7SZJlyZ8WperJeJlMJ88_I0S-yQ9xx2ZWRNUpjX2xx3YQk8WNozT8"/>
+</div>
+<span class="font-body-md text-body-md font-medium">نموذج اختبار اللغة العربية الموحد</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 bg-tertiary-container/10 text-tertiary rounded-full font-label-md text-sm">اختبارات</span>
+</td>
+<td class="px-lg py-md font-body-md">864</td>
+<td class="px-lg py-md font-body-md font-bold text-primary">6,912 ريال</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 bg-warning-amber/10 text-warning-amber rounded-full font-label-md text-sm flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-warning-amber"></span>
+                                    موسمي
+                                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<script>
+        // Simple interactivity for the dashboard
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Not preventing default since they are just mock links, 
+                // but highlighting the active state logic.
+                document.querySelectorAll('nav a').forEach(l => {
+                    l.classList.remove('text-primary', 'dark:text-primary-fixed-dim', 'font-bold', 'bg-surface-container-highest', 'dark:bg-surface-container-high');
+                    l.classList.add('text-on-surface-variant', 'dark:text-on-surface-variant');
+                });
+                link.classList.add('text-primary', 'dark:text-primary-fixed-dim', 'font-bold', 'bg-surface-container-highest', 'dark:bg-surface-container-high');
+                link.classList.remove('text-on-surface-variant', 'dark:text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>
